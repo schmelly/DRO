@@ -1,0 +1,23 @@
+<div class="container">
+    <axis class="x" 
+        [axis]="xAxis$ | async"
+        (unitSelection)="unitSelection($event);"
+        (referenceSelection)="referenceSelection($event);"
+        (zeroSelection)="zeroSelection($event);"
+        (axisSelection)="axisSelection($event);"
+    ></axis>
+    <axis class="y" 
+        [axis]="yAxis$ | async"
+        (unitSelection)="unitSelection($event);"
+        (referenceSelection)="referenceSelection($event);"
+        (zeroSelection)="zeroSelection($event);"
+        (axisSelection)="axisSelection($event);"
+    ></axis>
+    <axis class="z" 
+        [axis]="zAxis$ | async"
+        (unitSelection)="unitSelection($event);"
+        (referenceSelection)="referenceSelection($event);"
+        (zeroSelection)="zeroSelection($event);"
+        (axisSelection)="axisSelection($event);"
+    ></axis>
+</div>

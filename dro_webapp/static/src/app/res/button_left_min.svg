@@ -1,0 +1,6 @@
+<svg xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" viewBox="0 0 20 20">
+ <g id="button_left">
+  <rect style="color-rendering:auto;color:#000000;shape-rendering:auto;solid-color:#000000;stroke:#000;fill:none;mix-blend-mode:normal;image-rendering:auto;isolation:auto" class="button_border" rx="1.9" height="19" width="19" y=".5" x=".5"/>
+  <path style="stroke:#000;fill:none" d="m8 4-4 6 4 6v-3h8v-6l-8-1e-7z" class="button_path"/>
+ </g>
+</svg>

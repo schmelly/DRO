@@ -1,0 +1,15 @@
+<div class="container">
+    <display>
+    </display>
+    
+    <calculator [calculator]="calculator$ | async"
+        (decimalClick)="decimalClick($event);"
+        (negateClick)="negateClick($event);"
+        (numericClick)="numericClick($event);"
+        (functionClick)="functionClick($event);"
+        (evalClick)="evalClick($event);"
+        (storeClick)="storeClick($event);"
+        (clearClick)="clearClick($event);"
+        (directionClick)="directionClick($event);">
+    </calculator>
+</div>

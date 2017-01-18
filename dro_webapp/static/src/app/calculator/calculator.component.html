@@ -1,0 +1,37 @@
+<div class="container">
+    <div class="digit background calc">88888888888</div>
+    <div class="digit calc">{{calculator.displayString}}</div>
+    
+    <div class="panel">
+        <div class="button {{getDirectionStyle()}}" (click)="directionClick.emit({button: 'dir'})"><svg viewBox="0 0 20 20"><use xlink:href="app/res/svg-defs.svg#button_left"></use></svg></div>
+        <div class="button" (click)="functionClick.emit({button: 'sin'})"><svg viewBox="0 0 20 20"><use xlink:href="app/res/svg-defs.svg#button_sin"></use></svg></div>
+        <div class="button" (click)="functionClick.emit({button: 'cos'})"><svg viewBox="0 0 20 20"><use xlink:href="app/res/svg-defs.svg#button_cos"></use></svg></div>
+        <div class="button" (click)="functionClick.emit({button: 'tan'})"><svg viewBox="0 0 20 20"><use xlink:href="app/res/svg-defs.svg#button_tan"></use></svg></div>
+        <div class="button" (click)="functionClick.emit({button: 'sqrt'})"><svg viewBox="0 0 20 20"><use xlink:href="app/res/svg-defs.svg#button_sqrt"></use></svg></div>
+        <div class="button" (click)="clearClick.emit({button: 'CE'})"><svg viewBox="0 0 20 20"><use xlink:href="app/res/svg-defs.svg#button_empty"></use></svg><div class="label">CE</div></div>
+        <div class="button" (click)="clearClick.emit({button: 'C'})"><svg viewBox="0 0 20 20"><use xlink:href="app/res/svg-defs.svg#button_empty"></use></svg><div class="label">C</div></div>
+        <div class="button" (click)="clearClick.emit({button: 'del'})"><svg viewBox="0 0 20 20"><use xlink:href="app/res/svg-defs.svg#button_del"></use></svg></div>
+        <div class="button" (click)="functionClick.emit({button: '/'})"><svg viewBox="0 0 20 20"><use xlink:href="app/res/svg-defs.svg#button_empty"></use></svg><div class="label">÷</div></div>
+        <div class="button" (click)="storeClick.emit({button: 'MC'})"><svg viewBox="0 0 20 20"><use xlink:href="app/res/svg-defs.svg#button_empty"></use></svg><div class="label">MC</div></div>
+        <div class="button" (click)="numericClick.emit({button: '7'})"><svg viewBox="0 0 20 20"><use xlink:href="app/res/svg-defs.svg#button_empty"></use></svg><div class="label">7</div></div>
+        <div class="button" (click)="numericClick.emit({button: '8'})"><svg viewBox="0 0 20 20"><use xlink:href="app/res/svg-defs.svg#button_empty"></use></svg><div class="label">8</div></div>
+        <div class="button" (click)="numericClick.emit({button: '9'})"><svg viewBox="0 0 20 20"><use xlink:href="app/res/svg-defs.svg#button_empty"></use></svg><div class="label">9</div></div>
+        <div class="button" (click)="functionClick.emit({button: '*'})"><svg viewBox="0 0 20 20"><use xlink:href="app/res/svg-defs.svg#button_empty"></use></svg><div class="label">x</div></div>
+        <div class="button" (click)="storeClick.emit({button: 'MR'})"><svg viewBox="0 0 20 20"><use xlink:href="app/res/svg-defs.svg#button_empty"></use></svg><div class="label">MR</div></div>
+        <div class="button" (click)="numericClick.emit({button: '4'})"><svg viewBox="0 0 20 20"><use xlink:href="app/res/svg-defs.svg#button_empty"></use></svg><div class="label">4</div></div>
+        <div class="button" (click)="numericClick.emit({button: '5'})"><svg viewBox="0 0 20 20"><use xlink:href="app/res/svg-defs.svg#button_empty"></use></svg><div class="label">5</div></div>
+        <div class="button" (click)="numericClick.emit({button: '6'})"><svg viewBox="0 0 20 20"><use xlink:href="app/res/svg-defs.svg#button_empty"></use></svg><div class="label">6</div></div>
+        <div class="button" (click)="functionClick.emit({button: '-'})"><svg viewBox="0 0 20 20"><use xlink:href="app/res/svg-defs.svg#button_empty"></use></svg><div class="label">-</div></div>
+        <div class="button" (click)="storeClick.emit({button: 'M'})"><svg viewBox="0 0 20 20"><use xlink:href="app/res/svg-defs.svg#button_empty"></use></svg><div class="label">M+</div></div>
+        <div class="button" (click)="numericClick.emit({button: '1'})"><svg viewBox="0 0 20 20"><use xlink:href="app/res/svg-defs.svg#button_empty"></use></svg><div class="label">1</div></div>
+        <div class="button" (click)="numericClick.emit({button: '2'})"><svg viewBox="0 0 20 20"><use xlink:href="app/res/svg-defs.svg#button_empty"></use></svg><div class="label">2</div></div>
+        <div class="button" (click)="numericClick.emit({button: '3'})"><svg viewBox="0 0 20 20"><use xlink:href="app/res/svg-defs.svg#button_empty"></use></svg><div class="label">3</div></div>
+        <div class="button" (click)="functionClick.emit({button: '+'})"><svg viewBox="0 0 20 20"><use xlink:href="app/res/svg-defs.svg#button_empty"></use></svg><div class="label">+</div></div>
+        <div class="button" (click)="storeClick.emit({button: 'M-'})"><svg viewBox="0 0 20 20"><use xlink:href="app/res/svg-defs.svg#button_empty"></use></svg><div class="label">M-</div></div>
+        <div class="button" (click)="negateClick.emit({button: 'neg'})"><svg viewBox="0 0 20 20"><use xlink:href="app/res/svg-defs.svg#button_empty"></use></svg><div class="label">±</div></div>
+        <div class="button" (click)="numericClick.emit({button: '0'})"><svg viewBox="0 0 20 20"><use xlink:href="app/res/svg-defs.svg#button_empty"></use></svg><div class="label">0</div></div>
+        <div class="button" (click)="decimalClick.emit({button: '.'})"><svg viewBox="0 0 20 20"><use xlink:href="app/res/svg-defs.svg#button_empty"></use></svg><div class="label">.</div></div>
+        <div class="button" (click)="evalClick.emit({button: '='})"><svg viewBox="0 0 20 20"><use xlink:href="app/res/svg-defs.svg#button_empty"></use></svg><div class="label">=</div></div>
+        <div class="button" (click)="storeClick.emit({button: 'Ms'})"><svg viewBox="0 0 20 20"><use xlink:href="app/res/svg-defs.svg#button_empty"></use></svg><div class="label">Ms</div></div>
+    </div>
+</div>

@@ -1,0 +1,20 @@
+<div class="container">
+    <div class="digit background">8888.8888</div>
+    <div class="digit">{{numberFormat.format(getAxisValue())}}</div>
+    <div class="button selectable unit" (click)="unitSelection.emit({axis: axis})">
+        <svg viewBox="0 0 20 20"><use xlink:href="app/res/svg-defs.svg#button_split"></use></svg>
+        <div class="label_container">
+            <div class="{{getUnitStyle('mm')}}">mm</div>
+            <div class="{{getUnitStyle('inch')}}">inch</div>
+        </div>
+    </div>
+    <div class="button selectable abs" (click)="referenceSelection.emit({axis: axis})">
+        <svg viewBox="0 0 20 20"><use xlink:href="app/res/svg-defs.svg#button_split"></use></svg>
+        <div class="label_container">
+            <div class="{{getReferenceStyle('abs')}}">abs</div>
+            <div class="{{getReferenceStyle('inc')}}">inc</div>
+        </div>
+    </div>
+    <div class="button zero" (click)="zeroSelection.emit({axis: axis})"><svg viewBox="0 0 20 20"><use xlink:href="app/res/svg-defs.svg#button_empty"></use></svg><span class="label">zero</span></div>
+    <div class="button axis" (click)="axisSelection.emit({axis: axis})"><svg viewBox="0 0 20 20"><use xlink:href="app/res/svg-defs.svg#button_empty"></use></svg><span class="label">{{axis.label}}</span></div>
+</div>
