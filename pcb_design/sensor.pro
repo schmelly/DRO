@@ -1,4 +1,4 @@
-update=16.06.2016 18:08:22
+update=22/12/2016 07:52:00
 version=1
 last_client=kicad
 [pcbnew]
@@ -59,4 +59,13 @@ LibName27=atmel
 LibName28=contrib
 LibName29=valves
 LibName30=dro_components
-LibName31=arduino_micro_shield
+[schematic_editor]
+version=1
+PageLayoutDescrFile=
+PlotDirectoryName=
+SubpartIdSeparator=0
+SubpartFirstId=65
+NetFmtName=Pcbnew
+SpiceForceRefPrefix=0
+SpiceUseNetNumbers=0
+LabSize=60

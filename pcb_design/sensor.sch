@@ -50,7 +50,7 @@ U 1 1 583871AD
 P 1700 1550
 F 0 "P1" H 1700 1600 50  0000 C CNN
 F 1 "CONN_02X03" H 1700 1350 50  0000 C CNN
-F 2 "Pin_Headers:Pin_Header_Straight_2x03" H 1700 1550 50  0001 C CNN
+F 2 "dro_footprints:Pin_Header_Straight_2x03" H 1700 1550 50  0001 C CNN
 F 3 "" H 1700 1550 50  0000 C CNN
 	1    1700 1550
 	1    0    0    -1  
@@ -61,7 +61,7 @@ U 1 1 5838720E
 P 5150 1350
 F 0 "P2" H 5150 1150 50  0000 C CNN
 F 1 "CONN_01X03" V 5250 1350 50  0000 C CNN
-F 2 "Pin_Headers:Pin_Header_Straight_1x03" H 5150 1350 50  0001 C CNN
+F 2 "dro_footprints:Pin_Header_Straight_1x03" H 5150 1350 50  0001 C CNN
 F 3 "" H 5150 1350 50  0000 C CNN
 	1    5150 1350
 	1    0    0    -1  
@@ -119,7 +119,7 @@ A
 Text Label 1050 1350 2    60   ~ 0
 B
 Text Label 950  1400 2    60   ~ 0
-INC
+IDX
 $Comp
 L C C1
 U 1 1 583B67A4

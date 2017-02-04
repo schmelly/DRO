@@ -1,7 +1,7 @@
 (export (version D)
   (design
-    (source D:\Dateien\github\DRO\sensor.sch)
-    (date "28/11/2016 19:57:31")
+    (source D:/Dateien/github/DRO/sensor.sch)
+    (date "28/11/2016 23:16:02")
     (tool "Eeschema 4.0.4-stable")
     (sheet (number 1) (name /) (tstamps /)
       (title_block
@@ -124,7 +124,7 @@
     (library (logical dro_components)
       (uri D:\Dateien\github\DRO\dro_components.lib)))
   (nets
-    (net (code 1) (name /INC)
+    (net (code 1) (name /IDX)
       (node (ref U1) (pin 7))
       (node (ref P1) (pin 5)))
     (net (code 2) (name /B)

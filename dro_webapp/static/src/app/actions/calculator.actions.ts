@@ -11,7 +11,7 @@ export const CALCULATOR:string = 'CALCULATOR';
 export const DIRECTION:string = 'DIRECTION';
 export const DISPLAY_STRING:string = 'DISPLAY_STRING';
 
-var numberFormat = new Intl.NumberFormat(
+export const NUMBER_FORMAT = new Intl.NumberFormat(
 'en', 
 {
     style: 'decimal',
@@ -26,13 +26,13 @@ export class CalculatorActions {
 
   evaluate(calc:ICalculator) {
     calc.displayValue = Number(calc.displayString);
-    calc.displayString = numberFormat.format(calc.displayValue);
+    calc.displayString = NUMBER_FORMAT.format(calc.displayValue);
 
     if(calc.op!==undefined) {
       calc.displayValue = calc.op(calc.buffer, calc.displayValue);
       calc.buffer = undefined;
       calc.op = undefined;
-      calc.displayString = numberFormat.format(calc.displayValue);
+      calc.displayString = NUMBER_FORMAT.format(calc.displayValue);
     }
   }
 

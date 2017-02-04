@@ -44,7 +44,6 @@ var webpackConfig = {
 
 };
 
-
 // Our Webpack Defaults
 var defaultConfig = {
   devtool: 'cheap-module-inline-source-map',
@@ -62,14 +61,14 @@ var defaultConfig = {
 
   devServer: {
     historyApiFallback: true,
-    watchOptions: { aggregateTimeout: 300, poll: 1000 }
-    /*proxy: {
+    watchOptions: { aggregateTimeout: 300, poll: 1000 },
+    proxy: {
       '/socket.io': {
-        target: 'http://localhost:8081',
+        target: 'http://192.168.1.120',
         ws: true,
         pathRewrite: function (path, req) { console.log(path + " " + req); return path; }
       }
-  }*/
+  }
   },
 
   node: {
@@ -83,6 +82,5 @@ var defaultConfig = {
     setImmediate: false
   }
 };
-
 
 module.exports = webpackMerge(defaultConfig, webpackConfig);
