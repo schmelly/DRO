@@ -13,7 +13,24 @@ var webpackConfig = {
     path: path.resolve(__dirname, './dist'),
   },
 
+  debug: false,
+
   plugins: [
+    new webpack.optimize.OccurenceOrderPlugin(),
+    new webpack.optimize.DedupePlugin(),
+    //new webpack.optimize.CommonsChunkPlugin('vendors', 'vendors-[hash].js', Infinity),
+
+    new webpack.optimize.UglifyJsPlugin({
+      minimize: true,
+      sourceMap: true,
+      compress: {
+        drop_console: true
+      },
+      mangle: {
+        except: ['$super', '$', 'exports', 'require', '$q', '$ocLazyLoad']
+      }
+    }),
+
     new webpack.ContextReplacementPlugin(
       // The (\\|\/) piece accounts for path separators in *nix and Windows
       /angular(\\|\/)core(\\|\/)src(\\|\/)linker/,

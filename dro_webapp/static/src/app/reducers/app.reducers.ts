@@ -22,15 +22,18 @@ import {combineReducers} from 'redux';
 
 import {axesReducer, IAxesState, INITIAL_AXES_STATE} from './axis.reducers';
 import {calculatorReducer, ICalculatorState, INITIAL_CALCULATOR_STATE} from './calculator.reducers';
+import {configurationReducer, IConfigurationState, INITIAL_CONFIGURATION_STATE} from './configuration.reducers';
 
 export interface IAppState {
   axes: IAxesState;
   calculator: ICalculatorState;
+  configuration: IConfigurationState;
 };
 
 export const INITIAL_APP_STATE:IAppState = {
   axes: INITIAL_AXES_STATE,
-  calculator: INITIAL_CALCULATOR_STATE
+  calculator: INITIAL_CALCULATOR_STATE,
+  configuration: INITIAL_CONFIGURATION_STATE
 };
 
 interface axesReducer {
@@ -39,5 +42,6 @@ interface axesReducer {
 
 export const rootReducer = combineReducers<IAppState>({
   axes: axesReducer,
-  calculator: calculatorReducer
+  calculator: calculatorReducer,
+  configuration: configurationReducer
 });

@@ -21,15 +21,13 @@
 <div class="container">
     <display>
     </display>
-    
-    <calculator [calculator]="calculator$ | async"
-        (decimalClick)="decimalClick($event);"
-        (negateClick)="negateClick($event);"
-        (numericClick)="numericClick($event);"
-        (functionClick)="functionClick($event);"
-        (evalClick)="evalClick($event);"
-        (storeClick)="storeClick($event);"
-        (clearClick)="clearClick($event);"
-        (directionClick)="directionClick($event);">
-    </calculator>
+
+    <div class="template">
+        <router-outlet></router-outlet>
+    </div>
+
+    <nav class="navbar navbar-default">
+        <a [routerLink]="['/calculator']"><div class="button"><svg viewBox="0 0 20 20"><use xlink:href="app/res/svg-defs.svg#button_empty"></use></svg><div class="label">Calc</div></div></a>
+        <a [routerLink]="['/configuration']"><div class="button"><svg viewBox="0 0 20 20"><use xlink:href="app/res/svg-defs.svg#button_empty"></use></svg><div class="label">Conf</div></div></a>
+    </nav>
 </div>

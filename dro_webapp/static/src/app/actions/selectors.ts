@@ -24,3 +24,14 @@ export function selectDisplayValue(state:IAppState):number {
 export function selectOp(state:IAppState):op {
   return state.calculator.calculator.op;
 }
+
+export function selectInverted(state:IAppState, axis:string):boolean {
+  switch(axis) {
+    case 'yAxis':
+    return state.configuration.configuration.invertY;
+    case 'zAxis':
+    return state.configuration.configuration.invertZ;
+    default:
+    return state.configuration.configuration.invertX;
+  }
+}

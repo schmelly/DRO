@@ -18,23 +18,28 @@
     <https://github.com/schmelly/DRO/tree/master/dro_webapp> or 
     <http://www.gnu.org/licenses/>.
 */
-.container {
-    display: grid;
-    grid-template-columns: 40% 50% 10%;
-    grid-template-rows: 100%;
-}
+import { Routes, RouterModule } from '@angular/router';
+import {CalculatorComponent} from "./calculator/calculator.component";
+import {ConfigurationComponent} from "./configuration/configuration.component";
 
-display {
-    display: block;
-    grid-column: 1 / span 1;
-}
+export const ROUTE_CONFIG: Routes = [
+    {
+        path: '',
+        redirectTo: 'calculator',
+        pathMatch: 'full'
+    },
+    {
+        path: 'calculator',
+        component: CalculatorComponent
+    },
+    {
+        path: 'configuration',
+        component: ConfigurationComponent
+    },
+    {
+        path: '**',
+        redirectTo: 'calculator'
+    }
+];
 
-.template {
-    display: block;
-    grid-column: 2 / span 1;
-}
-
-nav {
-    display: block;
-    grid-column: 3 / span 1;
-}
+export const AppRoutesModule = RouterModule.forRoot(ROUTE_CONFIG);

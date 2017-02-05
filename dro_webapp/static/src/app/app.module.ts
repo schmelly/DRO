@@ -28,8 +28,12 @@ import {BrowserModule} from '@angular/platform-browser';
 import {NgReduxModule} from 'ng2-redux';
 
 import {AppComponent} from './app.component';
+import {AppRoutesModule} from "./app.routes";
 import {AxisComponent} from './axis/axis.component';
 import {CalculatorComponent} from './calculator/calculator.component';
+import {CalculatorViewComponent} from './calculator/calculator.view.component';
+import {ConfigurationComponent} from './configuration/configuration.component';
+import {ConfigurationViewComponent} from './configuration/configuration.view.component';
 import {DisplayComponent} from './display/display.component';
 
 import {SharedModule} from './shared/shared.module';
@@ -41,7 +45,10 @@ enableProdMode();
     AppComponent,
     AxisComponent,
     DisplayComponent,
-    CalculatorComponent
+    CalculatorComponent,
+    CalculatorViewComponent,
+    ConfigurationComponent,
+    ConfigurationViewComponent
   ],
   imports: [
     BrowserModule,
@@ -49,7 +56,8 @@ enableProdMode();
     HttpModule,
     NgReduxModule.forRoot(),
     ReactiveFormsModule,
-    SharedModule
+    SharedModule,
+    AppRoutesModule
   ],
   bootstrap: [ AppComponent ]
 })

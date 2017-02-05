@@ -107,3 +107,7 @@ svg {
 .button:active .button_border {
     fill: #F46036;
 }
+
+a:visited { 
+    color: #C6CAED;
+}

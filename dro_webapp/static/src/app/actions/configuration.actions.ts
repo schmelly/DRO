@@ -18,23 +18,21 @@
     <https://github.com/schmelly/DRO/tree/master/dro_webapp> or 
     <http://www.gnu.org/licenses/>.
 */
-.container {
-    display: grid;
-    grid-template-columns: 40% 50% 10%;
-    grid-template-rows: 100%;
-}
+import {Injectable} from '@angular/core';
+import {NgRedux} from 'ng2-redux';
 
-display {
-    display: block;
-    grid-column: 1 / span 1;
-}
+import {IAppState} from '../reducers/app.reducers';
+import * as selectors from './selectors';
 
-.template {
-    display: block;
-    grid-column: 2 / span 1;
-}
+export const INVERT:string = 'INVERT';
 
-nav {
-    display: block;
-    grid-column: 3 / span 1;
+@Injectable()
+export class ConfigurationActions {
+  
+  constructor(private ngRedux: NgRedux<IAppState>) {}
+
+  invertAxisSelectionClick(axis:string) {
+
+    this.ngRedux.dispatch({type: INVERT, axis: axis, inverted:!selectors.selectInverted(this.ngRedux.getState(), axis)});
+  }
 }

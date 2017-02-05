@@ -18,35 +18,68 @@
     <https://github.com/schmelly/DRO/tree/master/dro_webapp> or 
     <http://www.gnu.org/licenses/>.
 */
-import {Component, EventEmitter, Input, Output} from '@angular/core';
-import {Observable} from 'rxjs/Observable';
+import {Component} from '@angular/core';
+import {NgRedux, select} from 'ng2-redux';
+import {Observable} from 'rxjs';
+
+import {IAppState} from '../reducers/app.reducers';
 import {ICalculator} from '../reducers/calculator.reducers';
+import {CalculatorActions} from '../actions/calculator.actions';
 
 @Component({
   selector: 'calculator',
-  styleUrls: ['./calculator.component.css'],
-  templateUrl: './calculator.component.html'
+  providers: [CalculatorActions],
+  template: `
+  <calculatorView [calculator]="calculator$ | async"
+    (decimalClick)="decimalClick($event);"
+    (negateClick)="negateClick($event);"
+    (numericClick)="numericClick($event);"
+    (functionClick)="functionClick($event);"
+    (evalClick)="evalClick($event);"
+    (storeClick)="storeClick($event);"
+    (clearClick)="clearClick($event);"
+    (directionClick)="directionClick($event);">
+  </calculatorView>
+  `
 })
 export class CalculatorComponent {
-  @Input() calculator:ICalculator;
-  @Output() clearClick: EventEmitter<any> = new EventEmitter();
-  @Output() decimalClick: EventEmitter<any> = new EventEmitter();
-  @Output() directionClick: EventEmitter<any> = new EventEmitter();
-  @Output() evalClick: EventEmitter<any> = new EventEmitter();
-  @Output() functionClick: EventEmitter<any> = new EventEmitter();
-  @Output() negateClick: EventEmitter<any> = new EventEmitter();
-  @Output() numericClick: EventEmitter<any> = new EventEmitter();
-  @Output() storeClick: EventEmitter<any> = new EventEmitter();
 
-  numberFormat = new Intl.NumberFormat(
-    'en', 
-    {
-      style: 'decimal',
-      maximumFractionDigits: 4
-    }
-  );
+  @select(['calculator', 'calculator']) calculator$: Observable<ICalculator>;
+  
+  constructor(
+    private ngRedux: NgRedux<IAppState>, 
+    private calcActions: CalculatorActions
+  ) {}
 
-  getDirectionStyle() {
-      return this.calculator.direction;
+  clearClick(event): void {
+    this.calcActions.clearClick(event.button);
+  }
+
+  decimalClick(event): void {
+    this.calcActions.decimalClick(event.button);
+  }
+
+  directionClick(event): void {
+    this.calcActions.directionClick(event.button);
+  }
+
+  evalClick(event): void {
+    this.calcActions.evalClick(event.button);
+  }
+
+  functionClick(event): void {
+    this.calcActions.functionClick(event.button);
+  }
+
+  negateClick(event): void {
+    this.calcActions.negateClick(event.button);
+  }
+
+  numericClick(event): void {
+    this.calcActions.numericClick(event.button);
+  }
+
+  storeClick(event): void {
+    this.calcActions.storeClick(event.button);
   }
 }

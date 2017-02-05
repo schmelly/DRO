@@ -19,13 +19,11 @@
     <http://www.gnu.org/licenses/>.
 */
 import {Component, OnInit} from '@angular/core';
+import {Router} from '@angular/router'
 import {applyMiddleware, compose, createStore, Middleware, Store} from 'redux';
-import {NgRedux, select} from 'ng2-redux';
-import {Observable} from 'rxjs';
+import {NgRedux} from 'ng2-redux';
 
-import {CalculatorActions} from './actions/calculator.actions';
 import {IAppState, INITIAL_APP_STATE, rootReducer} from './reducers/app.reducers';
-import {ICalculator} from './reducers/calculator.reducers';
 import {SocketActions} from './actions/socket.actions';
 import {SocketService} from './shared/socket.service';
 
@@ -39,15 +37,17 @@ const store: Store<IAppState> = createStore(
 
 @Component({
   selector: 'app',
-  providers: [CalculatorActions, SocketActions],
+  providers: [ SocketActions],
   styleUrls: ['./app.component.css'],
   templateUrl: './app.component.html',
 })
 export class AppComponent implements OnInit {
-
-  @select(['calculator', 'calculator']) calculator$: Observable<ICalculator>;
   
-  constructor(private ngRedux: NgRedux<IAppState>, private calcActions: CalculatorActions, private socketActions: SocketActions, private socketService:SocketService) {
+  constructor(
+    private ngRedux: NgRedux<IAppState>,
+    private socketActions: SocketActions, 
+    private socketService:SocketService,
+    private router:Router) {
     this.socketService.get(socketActions);
   }
   
@@ -58,37 +58,5 @@ export class AppComponent implements OnInit {
     });
 
     this.ngRedux.provideStore(store);
-  }
-
-  clearClick(event): void {
-    this.calcActions.clearClick(event.button);
-  }
-
-  decimalClick(event): void {
-    this.calcActions.decimalClick(event.button);
-  }
-
-  directionClick(event): void {
-    this.calcActions.directionClick(event.button);
-  }
-
-  evalClick(event): void {
-    this.calcActions.evalClick(event.button);
-  }
-
-  functionClick(event): void {
-    this.calcActions.functionClick(event.button);
-  }
-
-  negateClick(event): void {
-    this.calcActions.negateClick(event.button);
-  }
-
-  numericClick(event): void {
-    this.calcActions.numericClick(event.button);
-  }
-
-  storeClick(event): void {
-    this.calcActions.storeClick(event.button);
   }
 }
