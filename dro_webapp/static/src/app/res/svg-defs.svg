@@ -40,14 +40,40 @@
  <g id="button_save">
   <rect style="color-rendering:auto;color:#000000;shape-rendering:auto;solid-color:#000000;mix-blend-mode:normal;image-rendering:auto;isolation:auto" class="button_border" rx="1.9" height="19" width="19" y=".5" x=".5"/>
   <path style="" d="m5.5303 8.7532 4.4697 3.1268l4.4697-3.1266h-2.2349v-6.2532h-4.4697v6.2532z" class="button_path"/>
-  <rect style="" class="button_path" rx="1.9" height="4" width="14" y="13.5" x="3"/>
+  <path class="button_path" style="" d="m4.9 13.5h10.2c1.0526 0 1.9 0.8474 1.9 1.9v0.2c0 1.0526-0.8474 1.9-1.9 1.9h-10.2c-1.0526 0-1.9-0.847-1.9-1.9v-0.2c0-1.0526 0.8474-1.9 1.9-1.9z"/>
   <path class="button_path" style="" d="m14.5 15.5a0.5 0.5 0 0 1 -0.5 0.5 0.5 0.5 0 0 1 -0.5 -0.5 0.5 0.5 0 0 1 0.5 -0.5 0.5 0.5 0 0 1 0.5 0.5z"/>
  </g>
  <g id="button_load">
   <rect style="color-rendering:auto;color:#000000;shape-rendering:auto;solid-color:#000000;mix-blend-mode:normal;image-rendering:auto;isolation:auto" class="button_border" rx="1.9" height="19" width="19" y=".5" x=".5"/>
   <path style="" d="m5.5303 5.7368 4.4697-3.1266l4.4697 3.1266h-2.2349v6.2532h-4.4697v-6.2532z" class="button_path"/>
-  <rect style="" class="button_path" rx="1.9" height="4" width="14" y="13.5" x="3"/>
+  <path class="button_path" style="" d="m4.9 13.5h10.2c1.0526 0 1.9 0.8474 1.9 1.9v0.2c0 1.0526-0.8474 1.9-1.9 1.9h-10.2c-1.0526 0-1.9-0.847-1.9-1.9v-0.2c0-1.0526 0.8474-1.9 1.9-1.9z"/>
   <path class="button_path" style="" d="m14.5 15.5a0.5 0.5 0 0 1 -0.5 0.5 0.5 0.5 0 0 1 -0.5 -0.5 0.5 0.5 0 0 1 0.5 -0.5 0.5 0.5 0 0 1 0.5 0.5z"/>
+ </g>
+ <g id="button_calc">
+  <rect style="color-rendering:auto;color:#000000;shape-rendering:auto;solid-color:#000000;mix-blend-mode:normal;image-rendering:auto;isolation:auto" class="button_border" rx="1.9" height="19" width="19" y=".5" x=".5"/>
+  <rect style="color-rendering:auto;color:#000000;shape-rendering:auto;solid-color:#000000;stroke-width:1px;mix-blend-mode:normal;image-rendering:auto;isolation:auto" class="button_path" rx="1" height="12" width="8" y="4" x="6"/>
+  <path style="color-rendering:auto;color:#000000;shape-rendering:auto;solid-color:#000000;stroke-width:1px;mix-blend-mode:normal;image-rendering:auto;isolation:auto" d="m6 8h8" class="button_path"/>
+  <path class="button_path" style="color-rendering:auto;color:#000000;shape-rendering:auto;solid-color:#000000;stroke-width:1px;mix-blend-mode:normal;image-rendering:auto;isolation:auto" d="m9 16v-8"/>
+  <path class="button_path" style="color-rendering:auto;color:#000000;shape-rendering:auto;solid-color:#000000;stroke-width:1px;mix-blend-mode:normal;image-rendering:auto;isolation:auto" d="m11 16v-8"/>
+  <path class="button_path" style="color-rendering:auto;color:#000000;shape-rendering:auto;solid-color:#000000;stroke-width:1px;mix-blend-mode:normal;image-rendering:auto;isolation:auto" d="m7 16v-8"/>
+  <path class="button_path" style="color-rendering:auto;color:#000000;shape-rendering:auto;solid-color:#000000;stroke-width:1px;mix-blend-mode:normal;image-rendering:auto;isolation:auto" d="m13 16v-8"/>
+  <path class="button_path" style="color-rendering:auto;color:#000000;shape-rendering:auto;solid-color:#000000;stroke-width:1px;mix-blend-mode:normal;image-rendering:auto;isolation:auto" d="m7 15h6"/>
+  <path class="button_path" style="color-rendering:auto;color:#000000;shape-rendering:auto;solid-color:#000000;stroke-width:1px;mix-blend-mode:normal;image-rendering:auto;isolation:auto" d="m7 13h6"/>
+  <path class="button_path" style="color-rendering:auto;color:#000000;shape-rendering:auto;solid-color:#000000;stroke-width:1px;mix-blend-mode:normal;image-rendering:auto;isolation:auto" d="m7 11h6"/>
+  <path class="button_path" style="color-rendering:auto;color:#000000;shape-rendering:auto;solid-color:#000000;stroke-width:1px;filter-blend-mode:normal;mix-blend-mode:normal;filter-gaussianBlur-deviation:0;image-rendering:auto;isolation:auto" d="m7 9h6"/>
+ </g>
+ <g id="button_config">
+  <rect style="color-rendering:auto;color:#000000;shape-rendering:auto;solid-color:#000000;mix-blend-mode:normal;image-rendering:auto;isolation:auto" class="button_border" rx="1.9" height="19" width="19" y=".5" x=".5"/>
+  <path class="button_path" style="color-rendering:auto;color:#000000;shape-rendering:auto;solid-color:#000000;mix-blend-mode:normal;image-rendering:auto;isolation:auto" d="m14.066 14.066c-1.282 1.282-0.741-0.775-2.416-0.082-1.6744 0.694 0.163 1.766-1.65 1.766-1.8127 0 0.024-1.072-1.6503-1.766-1.6747-0.693-1.1338 1.364-2.4156 0.082-1.2817-1.282 0.7754-0.741 0.0817-2.416-0.6937-1.6744-1.7658 0.163-1.7658-1.65 0-1.8127 1.0721 0.024 1.7658-1.6503 0.6937-1.6747-1.3634-1.1338-0.0817-2.4156 1.2818-1.2817 0.7409 0.7754 2.4156 0.0817 1.6743-0.6937-0.1624-1.7658 1.6503-1.7658 1.8127-1e-7 -0.024386 1.0721 1.6503 1.7658 1.6747 0.69369 1.1338-1.3634 2.4155-0.081634 1.2818 1.2818-0.77532 0.74083-0.08163 2.4155 0.694 1.6743 1.766-0.1624 1.766 1.6503s-1.0721-0.02439-1.7658 1.6503c-0.69369 1.6747 1.3634 1.1338 0.08163 2.4155z"/>
+  <path class="button_path" style="color-rendering:auto;color:#000000;shape-rendering:auto;solid-color:#000000;mix-blend-mode:normal;image-rendering:auto;isolation:auto" d="m12 10a2 2 0 0 1 -2 2 2 2 0 0 1 -2 -2 2 2 0 0 1 2 -2 2 2 0 0 1 2 2z"/>
+ </g>
+ <g id="button_holes">
+  <rect style="color-rendering:auto;color:#000000;shape-rendering:auto;solid-color:#000000;mix-blend-mode:normal;image-rendering:auto;isolation:auto" class="button_border" rx="1.9" height="19" width="19" y=".5" x=".5"/>
+  <path class="button_path" style="color-rendering:auto;color:#000000;shape-rendering:auto;solid-color:#000000;mix-blend-mode:normal;image-rendering:auto;isolation:auto" d="m8.5 12.5a1 1 0 0 1 -1 1 1 1 0 0 1 -1 -1 1 1 0 0 1 1 -1 1 1 0 0 1 1 1zm5-5a1 1 0 0 1 -1 1 1 1 0 0 1 -1 -1 1 1 0 0 1 1 -1 1 1 0 0 1 1 1zm-2.5 2.5a1 1 0 0 1 -1 1 1 1 0 0 1 -1 -1 1 1 0 0 1 1 -1 1 1 0 0 1 1 1zm5-5a1 1 0 0 1 -1 1 1 1 0 0 1 -1 -1 1 1 0 0 1 1 -1 1 1 0 0 1 1 1zm-10 10a1 1 0 0 1 -1 1 1 1 0 0 1 -1 -1 1 1 0 0 1 1 -1 1 1 0 0 1 1 1zm-2 1 12-12"/>
+ </g>
+ <g id="button_midpoint">
+  <rect style="color-rendering:auto;color:#000000;shape-rendering:auto;solid-color:#000000;mix-blend-mode:normal;image-rendering:auto;isolation:auto" class="button_border" rx="1.9" height="19" width="19" y=".5" x=".5"/>
+  <path style="stroke-width:.1" class="button_text" d="m15.593 12.129-0.46387 1.2744h-3.9062v-0.18066q1.7236-1.5723 2.4268-2.5684 0.70312-0.99609 0.70312-1.8213 0-0.62988-0.38574-1.0352-0.38574-0.40527-0.92285-0.40527-0.48828 0-0.87891 0.28809-0.38574 0.2832-0.57129 0.83496h-0.18066q0.12207-0.90332 0.625-1.3867 0.50781-0.4834 1.2646-0.4834 0.80566 0 1.3428 0.51758 0.54199 0.51758 0.54199 1.2207 0 0.50293-0.23438 1.0059-0.36133 0.79102-1.1719 1.6748-1.2158 1.3281-1.5186 1.6016h1.7285q0.52734 0 0.7373-0.03906 0.21484-0.03906 0.38574-0.15625 0.1709-0.12207 0.29785-0.3418h0.18066zm-4.5557-5.6689-2.3975 7.0801h-0.39062l2.3975-7.0801h0.39062zm-6.6309 0.97168 1.6113-0.78613h0.16113v5.5908q0 0.55664 0.043945 0.69336 0.048828 0.13672 0.19531 0.20996t0.5957 0.08301v0.18066h-2.4902v-0.18066q0.46875-0.0098 0.60547-0.07813 0.13672-0.07324 0.19043-0.19043 0.053711-0.12207 0.053711-0.71777v-3.5742q0-0.72266-0.048828-0.92773-0.03418-0.15625-0.12695-0.22949-0.087891-0.073242-0.21484-0.073242-0.18066 0-0.50293 0.15137l-0.0727-0.1512z"/>
  </g>
 </defs>
 </svg>

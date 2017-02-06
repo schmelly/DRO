@@ -20,6 +20,7 @@
 */
 .container {
     display: flex;
+    justify-content: space-around;
     flex-direction: column;
     font-size: 3vh;
 }
@@ -28,9 +29,9 @@
     display: grid;
     grid-template-columns: auto auto auto;
     grid-template-rows: auto auto;
-    justify-content: space-around;
-    justify-items: start;
-    grid-column-gap: 1vh;
+    justify-content: center;
+    grid-row-gap: 5vh;
+    grid-column-gap: 5vh;
 }
 
 .axesLabel {

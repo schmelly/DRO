@@ -15,7 +15,7 @@
    id="svg2"
    version="1.1"
    inkscape:version="0.91 r13725"
-   sodipodi:docname="button_load.svg">
+   sodipodi:docname="button_midpoint.svg">
   <defs
      id="defs4" />
   <sodipodi:namedview
@@ -25,11 +25,11 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="22.627417"
-     inkscape:cx="13.920976"
-     inkscape:cy="6.4057671"
+     inkscape:zoom="32"
+     inkscape:cx="10.137537"
+     inkscape:cy="8.6471894"
      inkscape:document-units="px"
-     inkscape:current-layer="button_load"
+     inkscape:current-layer="svg2"
      showgrid="true"
      inkscape:window-width="1680"
      inkscape:window-height="987"
@@ -59,14 +59,14 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
   <g
      inkscape:label="Ebene 1"
      inkscape:groupmode="layer"
-     id="button_load">
+     id="button_holes">
     <rect
        id="rect3336"
        width="19"
@@ -77,22 +77,9 @@
        class="button_border"
        style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate" />
     <path
-       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="M 5.5302779,5.7367911 10,2.6101866 l 4.469722,3.1266045 -2.234861,0 0,6.2532109 -4.4697219,0 0,-6.2532109 z"
-       id="path4138"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="cccccccc"
-       class="button_path" />
-    <path
-       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="m 4.9,13.5 10.2,0 c 1.0526,0 1.9,0.8474 1.9,1.9 l 0,0.2 c 0,1.0526 -0.8474,1.9 -1.9,1.9 l -10.2,0 C 3.8474,17.5 3,16.6526 3,15.6 l 0,-0.2 c 0,-1.0526 0.8474,-1.9 1.9,-1.9 z"
-       id="rect4142"
-       class="button_path"
-       inkscape:connector-curvature="0" />
-    <path
-       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="M 14.5,15.5 A 0.5,0.5 0 0 1 14,16 0.5,0.5 0 0 1 13.5,15.5 0.5,0.5 0 0 1 14,15 a 0.5,0.5 0 0 1 0.5,0.5 z"
-       id="path4144"
+       id="path4138-4"
+       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       d="m 8.5,12.5 a 1,1 0 0 1 -1,1 1,1 0 0 1 -1,-1 1,1 0 0 1 1,-1 1,1 0 0 1 1,1 z m 5,-5 a 1,1 0 0 1 -1,1 1,1 0 0 1 -1,-1 1,1 0 0 1 1,-1 1,1 0 0 1 1,1 z M 11,10 a 1,1 0 0 1 -1,1 1,1 0 0 1 -1,-1 1,1 0 0 1 1,-1 1,1 0 0 1 1,1 z M 16,5 A 1,1 0 0 1 15,6 1,1 0 0 1 14,5 1,1 0 0 1 15,4 1,1 0 0 1 16,5 Z M 6,14.999999 a 1,1 0 0 1 -1,1 1,1 0 0 1 -1,-1 1,1 0 0 1 1,-1 1,1 0 0 1 1,1 z M 4,16 16,4"
        class="button_path"
        inkscape:connector-curvature="0" />
   </g>

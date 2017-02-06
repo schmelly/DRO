@@ -2,7 +2,7 @@
  <g id="button_save">
   <rect style="color-rendering:auto;color:#000000;shape-rendering:auto;solid-color:#000000;mix-blend-mode:normal;image-rendering:auto;isolation:auto" class="button_border" rx="1.9" height="19" width="19" y=".5" x=".5"/>
   <path style="" d="m5.5303 8.7532 4.4697 3.1268l4.4697-3.1266h-2.2349v-6.2532h-4.4697v6.2532z" class="button_path"/>
-  <rect style="" class="button_path" rx="1.9" height="4" width="14" y="13.5" x="3"/>
+  <path class="button_path" style="" d="m4.9 13.5h10.2c1.0526 0 1.9 0.8474 1.9 1.9v0.2c0 1.0526-0.8474 1.9-1.9 1.9h-10.2c-1.0526 0-1.9-0.847-1.9-1.9v-0.2c0-1.0526 0.8474-1.9 1.9-1.9z"/>
   <path class="button_path" style="" d="m14.5 15.5a0.5 0.5 0 0 1 -0.5 0.5 0.5 0.5 0 0 1 -0.5 -0.5 0.5 0.5 0 0 1 0.5 -0.5 0.5 0.5 0 0 1 0.5 0.5z"/>
  </g>
 </svg>

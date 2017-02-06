@@ -1,0 +1,7 @@
+<svg xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" viewBox="0 0 20 20">
+ <g id="button_config">
+  <rect style="color-rendering:auto;color:#000000;shape-rendering:auto;solid-color:#000000;mix-blend-mode:normal;image-rendering:auto;isolation:auto" class="button_border" rx="1.9" height="19" width="19" y=".5" x=".5"/>
+  <path class="button_path" style="color-rendering:auto;color:#000000;shape-rendering:auto;solid-color:#000000;mix-blend-mode:normal;image-rendering:auto;isolation:auto" d="m14.066 14.066c-1.282 1.282-0.741-0.775-2.416-0.082-1.6744 0.694 0.163 1.766-1.65 1.766-1.8127 0 0.024-1.072-1.6503-1.766-1.6747-0.693-1.1338 1.364-2.4156 0.082-1.2817-1.282 0.7754-0.741 0.0817-2.416-0.6937-1.6744-1.7658 0.163-1.7658-1.65 0-1.8127 1.0721 0.024 1.7658-1.6503 0.6937-1.6747-1.3634-1.1338-0.0817-2.4156 1.2818-1.2817 0.7409 0.7754 2.4156 0.0817 1.6743-0.6937-0.1624-1.7658 1.6503-1.7658 1.8127-1e-7 -0.024386 1.0721 1.6503 1.7658 1.6747 0.69369 1.1338-1.3634 2.4155-0.081634 1.2818 1.2818-0.77532 0.74083-0.08163 2.4155 0.694 1.6743 1.766-0.1624 1.766 1.6503s-1.0721-0.02439-1.7658 1.6503c-0.69369 1.6747 1.3634 1.1338 0.08163 2.4155z"/>
+  <path class="button_path" style="color-rendering:auto;color:#000000;shape-rendering:auto;solid-color:#000000;mix-blend-mode:normal;image-rendering:auto;isolation:auto" d="m12 10a2 2 0 0 1 -2 2 2 2 0 0 1 -2 -2 2 2 0 0 1 2 -2 2 2 0 0 1 2 2z"/>
+ </g>
+</svg>
