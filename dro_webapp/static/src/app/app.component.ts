@@ -59,4 +59,12 @@ export class AppComponent implements OnInit {
 
     this.ngRedux.provideStore(store);
   }
+
+  saveConfiguration() {
+    this.socketService.saveConfiguration(this.ngRedux.getState());
+  }
+
+  loadConfiguration() {
+    this.socketService.loadConfiguration();
+  }
 }

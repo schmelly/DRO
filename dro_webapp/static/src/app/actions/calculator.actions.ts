@@ -7,6 +7,7 @@ import {IAppState} from '../reducers/app.reducers';
 import {ICalculator} from '../reducers/calculator.reducers';
 import * as selectors from './selectors';
 
+export const REINITIALIZE_CALCULATOR = 'REINITIALIZE_CALCULATOR';
 export const CALCULATOR:string = 'CALCULATOR';
 export const DIRECTION:string = 'DIRECTION';
 export const DISPLAY_STRING:string = 'DISPLAY_STRING';

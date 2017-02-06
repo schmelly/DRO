@@ -20,7 +20,7 @@
 #    <http://www.gnu.org/licenses/>.
 
 from flask import Flask, request, send_from_directory
-from flask_socketio import SocketIO
+from flask_socketio import SocketIO, emit
 import os
 import RPi.GPIO as GPIO
 import sys
@@ -283,6 +283,39 @@ def handleSetPosition(json):
   axis = json['axis']
   position = json['pos']
   absZero[axis] = absPos[axis]
+
+@socketio.on('saveConfiguration')
+def handleSaveConfiguration(json):
+  global rawPos
+  global absPos
+  global absZero
+  global increments
+  
+  config = {
+    'rawPos':rawPos,
+    'absPos':absPos,
+    'absZero':absZero,
+    'increments':increments,
+    'clientConfig':json}
+  
+  with open('dro_server.conf', 'w') as f:
+    f.write(str(config))
+
+@socketio.on('loadConfiguration')
+def handleLoadConfiguration():
+  global rawPos
+  global absPos
+  global absZero
+  global increments
+  
+  with open('dro_server.conf', 'r') as f:
+    config = f.read()
+    config = eval(config)
+    rawPos = config['rawPos']
+    absPos = config['absPos']
+    absZero = config['absZero']
+    increments = config['increments']
+    emit('loadConfiguration', config['clientConfig'])
 
 @app.route('/')
 def indexHtml():

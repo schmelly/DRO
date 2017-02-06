@@ -97,6 +97,7 @@ export function axesReducer(state:IAxesState = INITIAL_AXES_STATE, action): IAxe
 
   var stateCopy = {...state};
   switch(action.type) {
+    case axes_actions.REINITIALIZE_AXES: return action.axes;
     case axes_actions.CHANGE_UNIT: return setUnit(stateCopy, action.axis, action.unit);
     case axes_actions.CHANGE_REFERENCE: return setReference(stateCopy, action.axis, action.reference);
     case axes_actions.SET_ZERO: return setZero(stateCopy, action.axis, action.abs, action.inc, action.incValue);

@@ -18,7 +18,7 @@
     <https://github.com/schmelly/DRO/tree/master/dro_webapp> or 
     <http://www.gnu.org/licenses/>.
 */
-import {INVERT} from '../actions/configuration.actions';
+import {REINITIALIZE_CONFIGURATION, INVERT} from '../actions/configuration.actions';
 
 export interface IConfiguration {
     invertX: boolean;
@@ -44,6 +44,8 @@ export function configurationReducer(state:IConfigurationState = INITIAL_CONFIGU
     var calc:IConfiguration = stateCopy.configuration;
 
     switch(action.type) {
+        case REINITIALIZE_CONFIGURATION:
+            return action.configuration
         case INVERT:
         switch(action.axis) {
             case 'yAxis':

@@ -37,5 +37,17 @@
   <rect style="color-rendering:auto;color:#000000;shape-rendering:auto;solid-color:#000000;mix-blend-mode:normal;image-rendering:auto;isolation:auto" class="button_border" rx="1.9" height="19" width="19" y=".5" x=".5"/>
   <path class="button_path" style="" d="m3 10h14"/>
  </g>
+ <g id="button_save">
+  <rect style="color-rendering:auto;color:#000000;shape-rendering:auto;solid-color:#000000;mix-blend-mode:normal;image-rendering:auto;isolation:auto" class="button_border" rx="1.9" height="19" width="19" y=".5" x=".5"/>
+  <path style="" d="m5.5303 8.7532 4.4697 3.1268l4.4697-3.1266h-2.2349v-6.2532h-4.4697v6.2532z" class="button_path"/>
+  <rect style="" class="button_path" rx="1.9" height="4" width="14" y="13.5" x="3"/>
+  <path class="button_path" style="" d="m14.5 15.5a0.5 0.5 0 0 1 -0.5 0.5 0.5 0.5 0 0 1 -0.5 -0.5 0.5 0.5 0 0 1 0.5 -0.5 0.5 0.5 0 0 1 0.5 0.5z"/>
+ </g>
+ <g id="button_load">
+  <rect style="color-rendering:auto;color:#000000;shape-rendering:auto;solid-color:#000000;mix-blend-mode:normal;image-rendering:auto;isolation:auto" class="button_border" rx="1.9" height="19" width="19" y=".5" x=".5"/>
+  <path style="" d="m5.5303 5.7368 4.4697-3.1266l4.4697 3.1266h-2.2349v6.2532h-4.4697v-6.2532z" class="button_path"/>
+  <rect style="" class="button_path" rx="1.9" height="4" width="14" y="13.5" x="3"/>
+  <path class="button_path" style="" d="m14.5 15.5a0.5 0.5 0 0 1 -0.5 0.5 0.5 0.5 0 0 1 -0.5 -0.5 0.5 0.5 0 0 1 0.5 -0.5 0.5 0.5 0 0 1 0.5 0.5z"/>
+ </g>
 </defs>
 </svg>

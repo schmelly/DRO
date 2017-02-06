@@ -35,6 +35,8 @@ display {
 }
 
 nav {
-    display: block;
+    display: flex;
     grid-column: 3 / span 1;
+    flex-direction: column;
+    justify-content: space-around;
 }

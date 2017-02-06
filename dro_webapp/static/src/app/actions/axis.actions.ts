@@ -9,6 +9,7 @@ import * as selectors from './selectors';
 
 import {DISPLAY_STRING, NUMBER_FORMAT} from './calculator.actions';
 
+export const REINITIALIZE_AXES = 'REINITIALIZE_AXES';
 export const CHANGE_UNIT = 'CHANGE_UNIT';
 export const CHANGE_REFERENCE = 'CHANGE_REFERENCE';
 export const SET_ZERO = 'SET_ZERO';

@@ -19,7 +19,7 @@
     <http://www.gnu.org/licenses/>.
 */
 
-import {CALCULATOR, DIRECTION, DISPLAY_STRING} from '../actions/calculator.actions';
+import {REINITIALIZE_CALCULATOR, CALCULATOR, DIRECTION, DISPLAY_STRING} from '../actions/calculator.actions';
 
 export interface op {
     (firstOperand: number, secondOperand: number): number;
@@ -190,6 +190,8 @@ export function calculatorReducer(state:ICalculatorState = INITIAL_CALCULATOR_ST
     var calc:ICalculator = stateCopy.calculator;
 
     switch(action.type) {
+        case REINITIALIZE_CALCULATOR:
+            return action.calculator;
         case CALCULATOR:
             stateCopy.calculator = action.calculator;
         break;

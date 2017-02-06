@@ -46,8 +46,6 @@ export class ConfigurationViewComponent {
       break;
     }
 
-    console.log("getInvertedStyle()=" + selected ? 'selected' : '');
-
     return selected ? 'selected' : '';
   }
 }

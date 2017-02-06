@@ -22,14 +22,13 @@
     display: flex;
     flex-direction: column;
     font-size: 3vh;
-    margin: 1vh;
 }
 
 .axes {
     display: grid;
     grid-template-columns: auto auto auto;
     grid-template-rows: auto auto;
-    justify-content: start;
+    justify-content: space-around;
     justify-items: start;
     grid-column-gap: 1vh;
 }

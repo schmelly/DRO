@@ -24,6 +24,7 @@ import {NgRedux} from 'ng2-redux';
 import {IAppState} from '../reducers/app.reducers';
 import * as selectors from './selectors';
 
+export const REINITIALIZE_CONFIGURATION = 'REINITIALIZE_CONFIGURATION';
 export const INVERT:string = 'INVERT';
 
 @Injectable()

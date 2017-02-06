@@ -24,6 +24,9 @@ import {NgRedux} from 'ng2-redux';
 
 import {IAppState} from "../reducers/app.reducers";
 import {SocketActions} from "../actions/socket.actions";
+import {REINITIALIZE_AXES} from "../actions/axis.actions";
+import {REINITIALIZE_CALCULATOR} from "../actions/calculator.actions";
+import {REINITIALIZE_CONFIGURATION} from "../actions/configuration.actions";
 
 @Injectable()
 export class SocketService {
@@ -42,6 +45,14 @@ export class SocketService {
             console.log(`ERROR: "${error}" (${socketUrl})`);
         });
         this.socket.on("absPos", (data) => {actions.absPosition({data})});
+        this.socket.on("loadConfiguration", (data) => {
+            var axesConfig = data['axes'];
+            var calculatorConfig = data['calculator'];
+            var configurationConfig = data['configuration'];
+            this.ngRedux.dispatch({type: REINITIALIZE_AXES, axes:axesConfig});
+            this.ngRedux.dispatch({type: REINITIALIZE_CALCULATOR, calculator:calculatorConfig});
+            this.ngRedux.dispatch({type: REINITIALIZE_CONFIGURATION, configuration:configurationConfig});
+        });
         return this;
     }
 
@@ -53,5 +64,13 @@ export class SocketService {
 
     setZero(axisLabel:string) {
         this.socket.emit('setZero', {axis: axisLabel});
+    }
+
+    saveConfiguration(appState:IAppState) {
+        this.socket.emit('saveConfiguration', appState);
+    }
+
+    loadConfiguration() {
+        this.socket.emit('loadConfiguration');
     }
 }
