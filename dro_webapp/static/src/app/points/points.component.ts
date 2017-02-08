@@ -18,29 +18,31 @@
     <https://github.com/schmelly/DRO/tree/master/dro_webapp> or 
     <http://www.gnu.org/licenses/>.
 */
-.container {
-    display: grid;
-    grid-template-columns: 40% 45% 15%;
-    grid-template-rows: 100%;
-}
+import {Component} from '@angular/core';
+import {NgRedux, select} from 'ng2-redux';
+import {Observable} from 'rxjs';
 
-display {
-    display: block;
-    grid-column: 1 / span 1;
-}
+import {IAppState} from '../reducers/app.reducers';
+import {IPoints} from '../reducers/points.reducers';
+import {PointsActions} from '../actions/points.actions';
 
-.template {
-    display: block;
-    grid-column: 2 / span 1;
-    border-left: 2px solid #124559;
-}
+@Component({
+  selector: 'points',
+  providers: [PointsActions],
+  template: `
+  <pointsView [points]="points$ | async">
+  </pointsView>
+  `
+})
+export class PointsComponent {
 
-nav {
-    display: grid;
-    grid-column: 3 / span 1;
-    grid-template-columns: 45% 45%;
-    /*grid-template-rows: 20% 20% 20% 20% 20%;*/
-    justify-content: space-around;
-    align-content: space-around;
-    border-left: 2px solid #124559;
+  @select(['points', 'points']) points$: Observable<IPoints>;
+  
+  constructor(
+    private ngRedux: NgRedux<IAppState>, 
+    private pointsActions: PointsActions
+  ) {}
+
+  invertAxisSelectionClick(event): void {
+  }
 }

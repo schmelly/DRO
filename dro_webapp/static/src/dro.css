@@ -32,6 +32,8 @@ html,body {
     color: #598392;
     color: #C6CAED;
     user-select: none;
+    background-image: url('./app/res/background_image.jpg');
+    background-size: 100% 100%;
 }
 
 app {
@@ -110,4 +112,13 @@ svg {
 
 a:visited { 
     color: #C6CAED;
+}
+
+.svg_path {
+    stroke-width: 1;
+    stroke: #C6CAED;
+}
+
+.svg_text {
+    fill: #C6CAED;
 }

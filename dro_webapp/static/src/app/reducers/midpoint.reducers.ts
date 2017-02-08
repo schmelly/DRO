@@ -18,29 +18,28 @@
     <https://github.com/schmelly/DRO/tree/master/dro_webapp> or 
     <http://www.gnu.org/licenses/>.
 */
-.container {
-    display: grid;
-    grid-template-columns: 40% 45% 15%;
-    grid-template-rows: 100%;
+import {REINITIALIZE_MIDPOINT} from '../actions/midpoint.actions';
+
+export interface IMidpoint {
 }
 
-display {
-    display: block;
-    grid-column: 1 / span 1;
-}
+export interface IMidpointState {
+    midpoint: IMidpoint;
+};
 
-.template {
-    display: block;
-    grid-column: 2 / span 1;
-    border-left: 2px solid #124559;
-}
+export const INITIAL_MIDPOINT_STATE:IMidpointState = {
+  midpoint: {}
+};
 
-nav {
-    display: grid;
-    grid-column: 3 / span 1;
-    grid-template-columns: 45% 45%;
-    /*grid-template-rows: 20% 20% 20% 20% 20%;*/
-    justify-content: space-around;
-    align-content: space-around;
-    border-left: 2px solid #124559;
-}
+export function midpointReducer(state:IMidpointState = INITIAL_MIDPOINT_STATE, action): IMidpointState {
+    
+    var stateCopy:IMidpointState = Object.assign({}, state);
+    var calc:IMidpoint = stateCopy.midpoint;
+
+    switch(action.type) {
+        case REINITIALIZE_MIDPOINT:
+            return action.midpoint
+    }
+
+    return stateCopy;
+};

@@ -18,29 +18,31 @@
     <https://github.com/schmelly/DRO/tree/master/dro_webapp> or 
     <http://www.gnu.org/licenses/>.
 */
-.container {
-    display: grid;
-    grid-template-columns: 40% 45% 15%;
-    grid-template-rows: 100%;
-}
+import {Component} from '@angular/core';
+import {NgRedux, select} from 'ng2-redux';
+import {Observable} from 'rxjs';
 
-display {
-    display: block;
-    grid-column: 1 / span 1;
-}
+import {IAppState} from '../reducers/app.reducers';
+import {IHoles} from '../reducers/holes.reducers';
+import {HolesActions} from '../actions/holes.actions';
 
-.template {
-    display: block;
-    grid-column: 2 / span 1;
-    border-left: 2px solid #124559;
-}
+@Component({
+  selector: 'holes',
+  providers: [HolesActions],
+  template: `
+  <holesView [holes]="holes$ | async">
+  </holesView>
+  `
+})
+export class HolesComponent {
 
-nav {
-    display: grid;
-    grid-column: 3 / span 1;
-    grid-template-columns: 45% 45%;
-    /*grid-template-rows: 20% 20% 20% 20% 20%;*/
-    justify-content: space-around;
-    align-content: space-around;
-    border-left: 2px solid #124559;
+  @select(['holes', 'holes']) holes$: Observable<IHoles>;
+  
+  constructor(
+    private ngRedux: NgRedux<IAppState>, 
+    private holesActions: HolesActions
+  ) {}
+
+  invertAxisSelectionClick(event): void {
+  }
 }

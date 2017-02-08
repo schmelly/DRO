@@ -18,29 +18,28 @@
     <https://github.com/schmelly/DRO/tree/master/dro_webapp> or 
     <http://www.gnu.org/licenses/>.
 */
-.container {
-    display: grid;
-    grid-template-columns: 40% 45% 15%;
-    grid-template-rows: 100%;
+import {REINITIALIZE_CONTOUR} from '../actions/contour.actions';
+
+export interface IContour {
 }
 
-display {
-    display: block;
-    grid-column: 1 / span 1;
-}
+export interface IContourState {
+    contour: IContour;
+};
 
-.template {
-    display: block;
-    grid-column: 2 / span 1;
-    border-left: 2px solid #124559;
-}
+export const INITIAL_CONTOUR_STATE:IContourState = {
+  contour: {}
+};
 
-nav {
-    display: grid;
-    grid-column: 3 / span 1;
-    grid-template-columns: 45% 45%;
-    /*grid-template-rows: 20% 20% 20% 20% 20%;*/
-    justify-content: space-around;
-    align-content: space-around;
-    border-left: 2px solid #124559;
-}
+export function contourReducer(state:IContourState = INITIAL_CONTOUR_STATE, action): IContourState {
+    
+    var stateCopy:IContourState = Object.assign({}, state);
+    var calc:IContour = stateCopy.contour;
+
+    switch(action.type) {
+        case REINITIALIZE_CONTOUR:
+            return action.contour
+    }
+
+    return stateCopy;
+};

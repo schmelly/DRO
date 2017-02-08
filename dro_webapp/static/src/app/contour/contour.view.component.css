@@ -1,0 +1,36 @@
+.container {
+    display: grid;
+    grid-template-columns: 20% 20% 50%;
+    grid-template-rows: 10% 65%;
+    justify-content: space-around;
+    align-content: space-around;
+}
+
+.svg_path {
+    stroke-width: 1;
+    stroke: #C6CAED;
+}
+
+svg {
+    width: 100%;
+    height: 100%;
+
+}
+
+.svg_container {
+    display: table-cell;
+    position: relative;
+    width: 100%;
+    height: 100%;
+
+    grid-column: 1 / span 3;
+    grid-row: 2 / span 1;
+}
+
+.pocket_collision {
+    stroke: red;
+}
+
+.pocket_ok {
+    stroke: green;
+}

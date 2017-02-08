@@ -34,6 +34,14 @@ import {CalculatorComponent} from './calculator/calculator.component';
 import {CalculatorViewComponent} from './calculator/calculator.view.component';
 import {ConfigurationComponent} from './configuration/configuration.component';
 import {ConfigurationViewComponent} from './configuration/configuration.view.component';
+import {ContourComponent} from './contour/contour.component';
+import {ContourViewComponent} from './contour/contour.view.component';
+import {PointsComponent} from './points/points.component';
+import {PointsViewComponent} from './points/points.view.component';
+import {MidpointComponent} from './midpoint/midpoint.component';
+import {MidpointViewComponent} from './midpoint/midpoint.view.component';
+import {HolesComponent} from './holes/holes.component';
+import {HolesViewComponent} from './holes/holes.view.component';
 import {DisplayComponent} from './display/display.component';
 
 import {SharedModule} from './shared/shared.module';
@@ -48,7 +56,15 @@ enableProdMode();
     CalculatorComponent,
     CalculatorViewComponent,
     ConfigurationComponent,
-    ConfigurationViewComponent
+    ConfigurationViewComponent,
+    ContourComponent,
+    ContourViewComponent,
+    PointsComponent,
+    PointsViewComponent,
+    MidpointComponent,
+    MidpointViewComponent,
+    HolesComponent,
+    HolesViewComponent
   ],
   imports: [
     BrowserModule,

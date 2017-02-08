@@ -18,29 +18,28 @@
     <https://github.com/schmelly/DRO/tree/master/dro_webapp> or 
     <http://www.gnu.org/licenses/>.
 */
-.container {
-    display: grid;
-    grid-template-columns: 40% 45% 15%;
-    grid-template-rows: 100%;
+import {REINITIALIZE_POINTS} from '../actions/points.actions';
+
+export interface IPoints {
 }
 
-display {
-    display: block;
-    grid-column: 1 / span 1;
-}
+export interface IPointsState {
+    points: IPoints;
+};
 
-.template {
-    display: block;
-    grid-column: 2 / span 1;
-    border-left: 2px solid #124559;
-}
+export const INITIAL_POINTS_STATE:IPointsState = {
+  points: {}
+};
 
-nav {
-    display: grid;
-    grid-column: 3 / span 1;
-    grid-template-columns: 45% 45%;
-    /*grid-template-rows: 20% 20% 20% 20% 20%;*/
-    justify-content: space-around;
-    align-content: space-around;
-    border-left: 2px solid #124559;
-}
+export function pointsReducer(state:IPointsState = INITIAL_POINTS_STATE, action): IPointsState {
+    
+    var stateCopy:IPointsState = Object.assign({}, state);
+    var calc:IPoints = stateCopy.points;
+
+    switch(action.type) {
+        case REINITIALIZE_POINTS:
+            return action.points
+    }
+
+    return stateCopy;
+};

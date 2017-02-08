@@ -18,29 +18,28 @@
     <https://github.com/schmelly/DRO/tree/master/dro_webapp> or 
     <http://www.gnu.org/licenses/>.
 */
-.container {
-    display: grid;
-    grid-template-columns: 40% 45% 15%;
-    grid-template-rows: 100%;
+import {REINITIALIZE_HOLES} from '../actions/holes.actions';
+
+export interface IHoles {
 }
 
-display {
-    display: block;
-    grid-column: 1 / span 1;
-}
+export interface IHolesState {
+    holes: IHoles;
+};
 
-.template {
-    display: block;
-    grid-column: 2 / span 1;
-    border-left: 2px solid #124559;
-}
+export const INITIAL_HOLES_STATE:IHolesState = {
+  holes: {}
+};
 
-nav {
-    display: grid;
-    grid-column: 3 / span 1;
-    grid-template-columns: 45% 45%;
-    /*grid-template-rows: 20% 20% 20% 20% 20%;*/
-    justify-content: space-around;
-    align-content: space-around;
-    border-left: 2px solid #124559;
-}
+export function holesReducer(state:IHolesState = INITIAL_HOLES_STATE, action): IHolesState {
+    
+    var stateCopy:IHolesState = Object.assign({}, state);
+    var calc:IHoles = stateCopy.holes;
+
+    switch(action.type) {
+        case REINITIALIZE_HOLES:
+            return action.holes
+    }
+
+    return stateCopy;
+};

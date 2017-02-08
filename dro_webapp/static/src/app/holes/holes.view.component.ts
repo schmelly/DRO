@@ -18,29 +18,16 @@
     <https://github.com/schmelly/DRO/tree/master/dro_webapp> or 
     <http://www.gnu.org/licenses/>.
 */
-.container {
-    display: grid;
-    grid-template-columns: 40% 45% 15%;
-    grid-template-rows: 100%;
-}
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 
-display {
-    display: block;
-    grid-column: 1 / span 1;
-}
+import {IHoles} from '../reducers/holes.reducers';
 
-.template {
-    display: block;
-    grid-column: 2 / span 1;
-    border-left: 2px solid #124559;
-}
+@Component({
+  selector: 'holesView',
+  styleUrls: ['./holes.view.component.css'],
+  templateUrl: './holes.view.component.html'
+})
+export class HolesViewComponent {
 
-nav {
-    display: grid;
-    grid-column: 3 / span 1;
-    grid-template-columns: 45% 45%;
-    /*grid-template-rows: 20% 20% 20% 20% 20%;*/
-    justify-content: space-around;
-    align-content: space-around;
-    border-left: 2px solid #124559;
+  @Input() holes:IHoles;
 }

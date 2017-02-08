@@ -18,29 +18,16 @@
     <https://github.com/schmelly/DRO/tree/master/dro_webapp> or 
     <http://www.gnu.org/licenses/>.
 */
-.container {
-    display: grid;
-    grid-template-columns: 40% 45% 15%;
-    grid-template-rows: 100%;
-}
+import {Injectable} from '@angular/core';
+import {NgRedux} from 'ng2-redux';
 
-display {
-    display: block;
-    grid-column: 1 / span 1;
-}
+import {IAppState} from '../reducers/app.reducers';
+import * as selectors from './selectors';
 
-.template {
-    display: block;
-    grid-column: 2 / span 1;
-    border-left: 2px solid #124559;
-}
+export const REINITIALIZE_MIDPOINT = 'REINITIALIZE_MIDPOINT';
 
-nav {
-    display: grid;
-    grid-column: 3 / span 1;
-    grid-template-columns: 45% 45%;
-    /*grid-template-rows: 20% 20% 20% 20% 20%;*/
-    justify-content: space-around;
-    align-content: space-around;
-    border-left: 2px solid #124559;
+@Injectable()
+export class MidpointActions {
+  
+  constructor(private ngRedux: NgRedux<IAppState>) {}
 }

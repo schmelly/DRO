@@ -1,0 +1,7 @@
+<svg xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" viewBox="0 0 20 20">
+ <g id="button_contour">
+  <rect style="color-rendering:auto;color:#000000;shape-rendering:auto;solid-color:#000000;mix-blend-mode:normal;image-rendering:auto;isolation:auto" class="button_border" rx="1.9" height="19" width="19" y=".5" x=".5"/>
+  <path class="button_path" style="color-rendering:auto;color:#000000;shape-rendering:auto;solid-color:#000000;mix-blend-mode:normal;image-rendering:auto;isolation:auto" d="m5 5h10v10h-10zm10 8-2 2m2-5-5 5m5-8-8 8m7-10-9 9m6-9-6 6m3-6-3 3"/>
+  <path class="button_path" style="color-rendering:auto;color:#000000;shape-rendering:auto;solid-color:#000000;stroke-width:.5;mix-blend-mode:normal;image-rendering:auto;isolation:auto" d="m17.75 16.75a1 1 0 0 1 -1 1 1 1 0 0 1 -1 -1 1 1 0 0 1 1 -1 1 1 0 0 1 1 1zm-2.75 0.25-2 1m4-3v-12h-14v14h12l-2-1"/>
+ </g>
+</svg>
