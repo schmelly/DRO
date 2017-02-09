@@ -1,12 +1,13 @@
 <svg xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" viewBox="0 0 100 100">
  <g id="pocket">
-  <path id="pocket_border_top" d="m20.354 0-10 10m-0.354 0h80m0-10-10 10m0-10-10 10m0-10-10 10m0-10-10 10m0-10-10 10m0-10-10 10m0-10-10 10" style="stroke-width:1px" class="svg_path"/>
-  <path id="pocket_border_bottom" d="m20 90-10 10m80-10h-80m80 0-10 10m0-10-10 10m0-10-10 10m0-10-10 10m0-10-10 10m0-10-10 10m0-10-10 10" style="stroke-width:1px" class="svg_path"/>
-  <path id="pocket_border_right" d="m100 10-10 10m0-10v80m10-70-10 10m10 0-10 10m10 0-10 10m10 0l-10 10m10 0-10 10m10 0-10 10m10 0-10 10" style="stroke-width:1px" class="svg_path"/>
-  <path id="pocket_border_left" d="m10.354 10-10 10m9.646-10v80m-10 0 10-10m-10 0 10-10m-10 0 10-10m-10 0 10-10m-10 0 10-10m-10 0 10-10m0-10-10 10" style="stroke-width:1px" class="svg_path"/>
-  <path class="svg_path" style="stroke-width:1px" d="m10 89.646-10 10m100-99.646-10 10m-79.646-10-10 10m99.646 80-10 10"/>
+  <path id="pocket_border_top" d="m20.354 0-10 10m-0.354 0h80m0-10-10 10m0-10-10 10m0-10-10 10m0-10-10 10m0-10-10 10m0-10-10 10m0-10-10 10" style="stroke-width:1px;fill:none" class="svg_path"/>
+  <path id="pocket_border_bottom" d="m20 90-10 10m80-10h-80m80 0-10 10m0-10-10 10m0-10-10 10m0-10-10 10m0-10-10 10m0-10-10 10m0-10-10 10" style="stroke-width:1px;fill:none" class="svg_path"/>
+  <path id="pocket_border_right" d="m100 10-10 10m0-10v80m10-70-10 10m10 0-10 10m10 0-10 10m10 0l-10 10m10 0-10 10m10 0-10 10m10 0-10 10" style="stroke-width:1px;fill:none" class="svg_path"/>
+  <path id="pocket_border_left" d="m10.354 10-10 10m9.646-10v80m-10 0 10-10m-10 0 10-10m-10 0 10-10m-10 0 10-10m-10 0 10-10m-10 0 10-10m0-10-10 10" style="stroke-width:1px;fill:none" class="svg_path"/>
+  <path class="svg_path" style="stroke-width:1px;fill:none" d="m10 89.646-10 10m100-99.646-10 10m-79.646-10-10 10m99.646 80-10 10"/>
+  <path class="svg_path" style="stroke-dasharray:1, 1;stroke-width:.5;fill:none" d="m85 15h-70v70h70z"/>
   <path id="drill" class="svg_path" style="stroke-width:1px;fill:none" d="m40 50h20m-10-10v20m5-10a5 5 0 0 1 -5 5 5 5 0 0 1 -5 -5 5 5 0 0 1 5 -5 5 5 0 0 1 5 5z"/>
-  <text style="letter-spacing:0px;font-size:7.5px;word-spacing:0px;font-family:sans-serif;line-height:125%" xml:space="preserve" class="svg_text" y="20.698242" x="14.355469"><tspan x="14.355469" y="20.698242">[0,0]</tspan></text>
-  <text style="font-size:7.5px;letter-spacing:0px;text-anchor:end;word-spacing:0px;text-align:end;font-family:sans-serif;line-height:125%" xml:space="preserve" class="svg_text" y="84.01123" x="85.648193"><tspan x="85.648193" y="84.01123">[0,0]</tspan></text>
+  <text style="letter-spacing:0px;font-size:7.5px;word-spacing:0px;font-family:sans-serif;line-height:125%" xml:space="preserve" class="svg_text" y="21.51123" x="14.855469"><tspan x="14.855469" y="21.51123">[0,0]</tspan></text>
+  <text style="font-size:7.5px;letter-spacing:0px;text-anchor:end;word-spacing:0px;text-align:end;font-family:sans-serif;line-height:125%" xml:space="preserve" class="svg_text" y="83.51123" x="85.15332"><tspan x="85.15332" y="83.51123">[0,0]</tspan></text>
  </g>
 </svg>

@@ -1,0 +1,7 @@
+<svg xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" viewBox="0 0 20 20">
+ <g id="button_del_points">
+  <rect style="color-rendering:auto;color:#000000;shape-rendering:auto;solid-color:#000000;mix-blend-mode:normal;image-rendering:auto;isolation:auto" class="button_border" rx="1.9" height="19" width="19" y=".5" x=".5"/>
+  <path class="button_text" d="m12.777 5.5027-2.4658-3.3386h2.3132l1.3977 2.0264 1.416-2.0264h2.3132l-2.4658 3.3264 2.589 3.5095h-2.314l-1.538-2.1606-1.52 2.1606h-2.313l2.588-3.4973z"/>
+  <path class="button_path" style="stroke-width:.5" d="m3 15h4m-2-2v4m1.5-2c0 0.82843-0.67157 1.5-1.5 1.5s-1.5-0.67157-1.5-1.5 0.67157-1.5 1.5-1.5 1.5 0.67157 1.5 1.5zm-3.5-5h4m-2-2v4m1.5-2c0 0.828-0.6716 1.5-1.5 1.5s-1.5-0.672-1.5-1.5c0-0.8284 0.6716-1.5 1.5-1.5s1.5 0.6716 1.5 1.5zm-3.5-5h4m-2-2v4m1.5-2c0 0.8284-0.6716 1.5-1.5 1.5s-1.5-0.6716-1.5-1.5 0.6716-1.5 1.5-1.5 1.5 0.6716 1.5 1.5z"/>
+ </g>
+</svg>

@@ -1,0 +1,6 @@
+<svg xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" viewBox="0 0 20 20">
+ <g id="button_load_points">
+  <rect style="color-rendering:auto;color:#000000;shape-rendering:auto;solid-color:#000000;mix-blend-mode:normal;image-rendering:auto;isolation:auto" class="button_border" rx="1.9" height="19" width="19" y=".5" x=".5"/>
+  <path class="button_path" style="stroke-width:.5" d="m17 14.463a0.36607 0.36568 0 0 1 -0.366 0.365 0.36607 0.36568 0 0 1 -0.366 -0.365 0.36607 0.36568 0 0 1 0.366 -0.366 0.36607 0.36568 0 0 1 0.366 0.366zm-7.7339-1.463h7.4679c0.77065 0 1.3911 0.61976 1.3911 1.3896v0.14627c0 0.76983-0.62042 1.3896-1.3911 1.3896h-7.4679c-0.77065 0-1.3911-0.61976-1.3911-1.3896v-0.14627c0-0.77 0.6204-1.39 1.3911-1.39zm0.4614-6.7133 3.2725-2.2867l3.2725 2.2867h-1.6362v4.5733h-3.2725v-4.5733zm-6.7275 8.7133h4m-2-2v4m1.5-2c0 0.82843-0.67157 1.5-1.5 1.5s-1.5-0.67157-1.5-1.5 0.67157-1.5 1.5-1.5 1.5 0.67157 1.5 1.5zm-3.5-5h4m-2-2v4m1.5-2c0 0.828-0.6716 1.5-1.5 1.5s-1.5-0.672-1.5-1.5c0-0.8284 0.6716-1.5 1.5-1.5s1.5 0.6716 1.5 1.5zm-3.5-5h4m-2-2v4m1.5-2c0 0.8284-0.6716 1.5-1.5 1.5s-1.5-0.6716-1.5-1.5 0.6716-1.5 1.5-1.5 1.5 0.6716 1.5 1.5z"/>
+ </g>
+</svg>

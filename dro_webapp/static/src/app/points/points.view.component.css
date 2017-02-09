@@ -1,0 +1,31 @@
+.container {
+    display: grid;
+    grid-template-columns: 20% 20% 50%;
+    grid-template-rows: 10% 80%;
+    align-content: space-around;
+    justify-content: space-around;
+}
+
+.list {
+    grid-column: 1 / span 3;
+    grid-row: 2 / span 1;
+    overflow-y: scroll;
+}
+
+.listitem {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    font-size: 5vh;
+}
+
+.listitem div {
+    flex-grow: 1;
+}
+
+.inputfile {
+    position: absolute;
+    left: 0;
+    right: 0;
+    display: none;
+}

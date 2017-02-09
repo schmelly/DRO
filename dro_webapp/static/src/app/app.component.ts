@@ -21,6 +21,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router'
 import {applyMiddleware, compose, createStore, Middleware, Store} from 'redux';
+import thunk from 'redux-thunk';
 import {NgRedux} from 'ng2-redux';
 
 import {IAppState, INITIAL_APP_STATE, rootReducer} from './reducers/app.reducers';
@@ -32,8 +33,8 @@ const createLogger = require('redux-logger');
 
 const store: Store<IAppState> = createStore(
   rootReducer,
-  INITIAL_APP_STATE/*,
-  compose(applyMiddleware(createLogger()))*/);
+  INITIAL_APP_STATE,
+  compose(applyMiddleware(thunk)));
 
 @Component({
   selector: 'app',

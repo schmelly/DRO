@@ -26,8 +26,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="5.6"
-     inkscape:cx="48.056661"
-     inkscape:cy="46.270106"
+     inkscape:cx="30.281434"
+     inkscape:cy="45.560503"
      inkscape:document-units="px"
      inkscape:current-layer="pocket"
      showgrid="true"
@@ -109,29 +109,35 @@
        d="m 40,50 20,0 M 50,40 50,60 m 5,-10 a 5,5 0 0 1 -5,5 5,5 0 0 1 -5,-5 5,5 0 0 1 5,-5 5,5 0 0 1 5,5 z"
        inkscape:connector-curvature="0"
        class="svg_path" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:1, 1;stroke-dashoffset:0;stroke-opacity:1"
+       d="m 85,15 -70,0 0,70 70,0 z"
+       id="path4144"
+       inkscape:connector-curvature="0"
+       class="svg_path" />
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:7.5px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="14.355469"
-       y="20.698242"
+       x="14.855469"
+       y="21.51123"
        id="P1"
        sodipodi:linespacing="125%"
        class="svg_text"><tspan
          sodipodi:role="line"
          id="tspan4817"
-         x="14.355469"
-         y="20.698242">[0,0]</tspan></text>
+         x="14.855469"
+         y="21.51123">[0,0]</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:7.5px;line-height:125%;font-family:sans-serif;text-align:end;letter-spacing:0px;word-spacing:0px;text-anchor:end;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="85.648193"
-       y="84.01123"
+       x="85.15332"
+       y="83.51123"
        id="P2"
        sodipodi:linespacing="125%"
        class="svg_text"><tspan
          sodipodi:role="line"
          id="tspan4817-3"
-         x="85.648193"
-         y="84.01123">[0,0]</tspan></text>
+         x="85.15332"
+         y="83.51123">[0,0]</tspan></text>
   </g>
 </svg>

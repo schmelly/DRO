@@ -18,9 +18,9 @@
     <https://github.com/schmelly/DRO/tree/master/dro_webapp> or 
     <http://www.gnu.org/licenses/>.
 */
-import {Component, EventEmitter, Input, Output} from '@angular/core';
+import {Component, EventEmitter, Input, Output, ViewChild} from '@angular/core';
 
-import {IPoints} from '../reducers/points.reducers';
+import {IPoint} from '../reducers/points.reducers';
 
 @Component({
   selector: 'pointsView',
@@ -29,5 +29,13 @@ import {IPoints} from '../reducers/points.reducers';
 })
 export class PointsViewComponent {
 
-  @Input() points:IPoints;
+  @Input() points:Array<IPoint>;
+  @Output() loadPointsClick: EventEmitter<any> = new EventEmitter();
+  @Output() deletePointsClick: EventEmitter<any> = new EventEmitter();
+
+  @ViewChild('fileInput') fileInput;
+
+  inputClick() {
+    this.fileInput.nativeElement.value = null;
+  }
 }

@@ -21,6 +21,7 @@
 import {Component, EventEmitter, Input, Output, ViewChild, ElementRef} from '@angular/core';
 
 import {IContour} from '../reducers/contour.reducers';
+import {IPoint} from '../reducers/points.reducers';
 import {IAxis} from '../axis/axis.component';
 
 @Component({
@@ -31,9 +32,12 @@ import {IAxis} from '../axis/axis.component';
 export class ContourViewComponent {
 
   @Input() contour:IContour;
+  @Input() points:Array<IPoint>;
   @Input() xAxis:IAxis;
   @Input() yAxis:IAxis;
   @Input() zAxis:IAxis;
+  @Output() setP1Click: EventEmitter<any> = new EventEmitter();
+  @Output() setP2Click: EventEmitter<any> = new EventEmitter();
 
   private p1 = [0,0];
   private p2 = [10,10];
@@ -77,13 +81,10 @@ export class ContourViewComponent {
   getPocketDrillTransform() {
 
     var xLocation = this.xAxis.incValue / (this.p2[0]-this.p1[0]);
-    console.log(xLocation);
-    xLocation = 80*xLocation+10-50;
+    xLocation = 70*xLocation+15-50;
 
     var yLocation = this.yAxis.incValue / (this.p2[1]-this.p1[1]);
-    yLocation = 80*yLocation+10-50;
-
-    console.log(`translate(${xLocation},${yLocation})`);
+    yLocation = 70*yLocation+15-50;
 
     return `translate(${xLocation},${yLocation})`;
   }
@@ -94,5 +95,9 @@ export class ContourViewComponent {
 
   getPocketP2() {
     return "[10,10]";
+  }
+
+  getPointOption(point:IPoint) {
+    return `${point.name}: [${point.x},${point.y},${point.z}]`;
   }
 }

@@ -23,26 +23,37 @@ import {NgRedux, select} from 'ng2-redux';
 import {Observable} from 'rxjs';
 
 import {IAppState} from '../reducers/app.reducers';
-import {IPoints} from '../reducers/points.reducers';
+import {IPoint} from '../reducers/points.reducers';
 import {PointsActions} from '../actions/points.actions';
 
 @Component({
   selector: 'points',
   providers: [PointsActions],
-  template: `
-  <pointsView [points]="points$ | async">
+  template: 
+  //<pointsView [points]="points$ | async">
+  `<pointsView
+    [points]="points$ | async"
+    (loadPointsClick)="loadPointsClick($event);"
+    (deletePointsClick)="deletePointsClick($event);">
   </pointsView>
   `
 })
 export class PointsComponent {
 
-  @select(['points', 'points']) points$: Observable<IPoints>;
+  @select(['points', 'points']) points$: Observable<Array<IPoint>>;
   
   constructor(
     private ngRedux: NgRedux<IAppState>, 
     private pointsActions: PointsActions
   ) {}
 
-  invertAxisSelectionClick(event): void {
+  loadPointsClick(event): void {
+
+    var files = event.target.files;
+    this.pointsActions.loadPointsClick(files);
+  }
+
+  deletePointsClick(event): void {
+    this.pointsActions.deletePointsClick();
   }
 }

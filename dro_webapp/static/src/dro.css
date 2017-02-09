@@ -104,6 +104,7 @@ svg {
 .button .button_text {
     fill: #C6CAED;
     stroke:#C6CAED;
+    stroke-width: 0;
 }
 
 .button:active .button_border {

@@ -24,6 +24,7 @@ import {Observable} from 'rxjs';
 
 import {IAppState} from '../reducers/app.reducers';
 import {IContour} from '../reducers/contour.reducers';
+import {IPoint} from '../reducers/points.reducers';
 import {ContourActions} from '../actions/contour.actions';
 
 @Component({
@@ -32,6 +33,7 @@ import {ContourActions} from '../actions/contour.actions';
   template: `
   <contourView
     [contour]="contour$ | async"
+    [points]="points$ | async"
     [xAxis]="xAxis$ | async"
     [yAxis]="yAxis$ | async"
     [zAxis]="zAxis$ | async"
@@ -42,6 +44,7 @@ import {ContourActions} from '../actions/contour.actions';
 export class ContourComponent {
 
   @select(['contour', 'contour']) contour$: Observable<IContour>;
+  @select(['points', 'points']) points$: Observable<Array<IPoint>>;
   @select(['axes', 'xAxis']) xAxis$: Observable<IContour>;
   @select(['axes', 'yAxis']) yAxis$: Observable<IContour>;
   @select(['axes', 'zAxis']) zAxis$: Observable<IContour>;

@@ -18,6 +18,16 @@
     <https://github.com/schmelly/DRO/tree/master/dro_webapp> or 
     <http://www.gnu.org/licenses/>.
 -->
+<input #fileInput type="file" name="file" id="file" class="inputfile" (change)="loadPointsClick.emit($event);"/>
 <div class="container">
-    Hello Points
+    <label for="file" (click)="inputClick()"><div class="button"><svg viewBox="0 0 20 20"><use xlink:href="app/res/svg-defs.svg#button_load_points"></use></svg></div></label>
+    <div class="button" (click)="deletePointsClick.emit($event);"><svg viewBox="0 0 20 20"><use xlink:href="app/res/svg-defs.svg#button_del_points"></use></svg></div>
+    <div class="list">
+        <div class="listitem" *ngFor="let point of points">
+            <div>{{point.name}}</div>
+            <div>{{"x: "}}{{point.x}}</div>
+            <div>{{"y: "}}{{point.y}}</div>
+            <div>{{"z: "}}{{point.z}}</div>
+        </div>
+    </div>
 </div>

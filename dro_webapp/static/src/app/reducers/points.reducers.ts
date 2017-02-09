@@ -18,28 +18,37 @@
     <https://github.com/schmelly/DRO/tree/master/dro_webapp> or 
     <http://www.gnu.org/licenses/>.
 */
-import {REINITIALIZE_POINTS} from '../actions/points.actions';
+import {REINITIALIZE_POINTS, LOAD_POINTS, DELETE_POINTS} from '../actions/points.actions';
 
-export interface IPoints {
+export interface IPoint {
+    name: string;
+    x: number;
+    y: number;
+    z: number;
 }
 
 export interface IPointsState {
-    points: IPoints;
+    points: Array<IPoint>;
 };
 
 export const INITIAL_POINTS_STATE:IPointsState = {
-  points: {}
+  points: []
 };
 
 export function pointsReducer(state:IPointsState = INITIAL_POINTS_STATE, action): IPointsState {
     
     var stateCopy:IPointsState = Object.assign({}, state);
-    var calc:IPoints = stateCopy.points;
 
     switch(action.type) {
         case REINITIALIZE_POINTS:
-            return action.points
+            return action.points;
+        case LOAD_POINTS:
+            stateCopy.points = stateCopy.points.concat(action.points);
+            return stateCopy;
+        case DELETE_POINTS:
+            stateCopy.points = [];
+            return stateCopy;
     }
 
-    return stateCopy;
+    return state;
 };

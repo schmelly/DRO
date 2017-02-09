@@ -18,9 +18,15 @@
     <https://github.com/schmelly/DRO/tree/master/dro_webapp> or 
     <http://www.gnu.org/licenses/>.
 -->
+    <datalist id="p1List">
+        <option *ngFor="let point of points" value="{{getPointOption(point)}}">
+    </datalist>
 <div class="container">
     <div class="button"><svg viewBox="0 0 20 20"><use xlink:href="app/res/svg-defs.svg#button_pocket"></use></svg></div>
     <div class="button"><svg viewBox="0 0 20 20"><use xlink:href="app/res/svg-defs.svg#button_contour"></use></svg></div>
+
+    <input list="p1List" name="p1Input" id="p1Input">
+
 
     <div class="svg_container">
         <svg viewBox="0 0 100 100">
@@ -30,9 +36,10 @@
             <path [attr.class]="getPocketRightClass()" id="pocket_border_right" d="m100 10-10 10m0-10v80m10-70-10 10m10 0-10 10m10 0-10 10m10 0l-10 10m10 0-10 10m10 0-10 10m10 0-10 10" class="svg_path"/>
             <path [attr.class]="getPocketLeftClass()" id="pocket_border_left" d="m10.354 10-10 10m9.646-10v80m-10 0 10-10m-10 0 10-10m-10 0 10-10m-10 0 10-10m-10 0 10-10m-10 0 10-10m0-10-10 10" class="svg_path"/>
             <path class="svg_path" style="stroke-width:1px" d="m10 89.646-10 10m100-99.646-10 10m-79.646-10-10 10m99.646 80-10 10"/>
+            <path class="svg_path" style="stroke-dasharray:1, 1;stroke-width:.5;fill:none" d="m85 15h-70v70h70z"/>
             <path [attr.transform]="getPocketDrillTransform()" id="drill" class="svg_path" style="stroke-width:1px; fill:none" d="m40 50h20m-10-10v20m5-10a5 5 0 0 1 -5 5 5 5 0 0 1 -5 -5 5 5 0 0 1 5 -5 5 5 0 0 1 5 5z"/>
-            <text style="letter-spacing:0px;font-size:7.5px;word-spacing:0px;font-family:sans-serif;line-height:125%" xml:space="preserve" class="svg_text" y="20.698242" x="14.355469"><tspan x="14.355469" y="20.698242">{{getPocketP1()}}</tspan></text>
-            <text style="font-size:7.5px;letter-spacing:0px;text-anchor:end;word-spacing:0px;text-align:end;font-family:sans-serif;line-height:125%" xml:space="preserve" class="svg_text" y="84.01123" x="85.648193"><tspan x="85.648193" y="84.01123">{{getPocketP2()}}</tspan></text>
+            <text style="letter-spacing:0px;font-size:7.5px;word-spacing:0px;font-family:sans-serif;line-height:125%" xml:space="preserve" class="svg_text" y="21.51123" x="14.855469"><tspan x="14.855469" y="21.51123">{{getPocketP1()}}</tspan></text>
+            <text style="font-size:7.5px;letter-spacing:0px;text-anchor:end;word-spacing:0px;text-align:end;font-family:sans-serif;line-height:125%" xml:space="preserve" class="svg_text" y="83.51123" x="85.15332"><tspan x="85.15332" y="83.51123">{{getPocketP2()}}</tspan></text>
             </g>
         </svg>
     </div>

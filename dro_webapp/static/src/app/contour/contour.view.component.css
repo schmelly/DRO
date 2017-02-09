@@ -1,7 +1,7 @@
 .container {
     display: grid;
-    grid-template-columns: 20% 20% 50%;
-    grid-template-rows: 10% 65%;
+    grid-template-columns: 20% 20% 20% 20% 10%;
+    grid-template-rows: 10% 65% 15%;
     justify-content: space-around;
     align-content: space-around;
 }
@@ -23,7 +23,7 @@ svg {
     width: 100%;
     height: 100%;
 
-    grid-column: 1 / span 3;
+    grid-column: 1 / span 5;
     grid-row: 2 / span 1;
 }
 
@@ -33,4 +33,17 @@ svg {
 
 .pocket_ok {
     stroke: green;
+}
+
+input{
+    background:none;
+    width: 10vh;
+    height: 10vh;
+    border: .5vh solid #124559;
+    border-radius: 1vh;
+    font-size: 5vh;
+}
+
+input[list] {
+    background: none;
 }
