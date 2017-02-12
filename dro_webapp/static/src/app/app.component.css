@@ -20,7 +20,7 @@
 */
 .container {
     display: grid;
-    grid-template-columns: 40% 45% 15%;
+    grid-template-columns: 35% 50% 15%;
     grid-template-rows: 100%;
 }
 

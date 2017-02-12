@@ -66,6 +66,10 @@ export class SocketService {
         this.socket.emit('setZero', {axis: axisLabel});
     }
 
+    setAbsPostion(axisLabel:string, absPos:number) {
+        this.socket.emit('setAbsPosition', {axis: axisLabel, absPos: absPos});
+    }
+
     saveConfiguration(appState:IAppState) {
         this.socket.emit('saveConfiguration', appState);
     }

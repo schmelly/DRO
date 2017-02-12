@@ -23,7 +23,7 @@ import {combineReducers} from 'redux';
 import {axesReducer, IAxesState, INITIAL_AXES_STATE} from './axis.reducers';
 import {calculatorReducer, ICalculatorState, INITIAL_CALCULATOR_STATE} from './calculator.reducers';
 import {configurationReducer, IConfigurationState, INITIAL_CONFIGURATION_STATE} from './configuration.reducers';
-import {contourReducer, IContourState, INITIAL_CONTOUR_STATE} from './contour.reducers';
+import {pocketReducer, IPocketState, INITIAL_POCKET_STATE} from './pocket.reducers';
 import {holesReducer, IHolesState, INITIAL_HOLES_STATE} from './holes.reducers';
 import {midpointReducer, IMidpointState, INITIAL_MIDPOINT_STATE} from './midpoint.reducers';
 import {pointsReducer, IPointsState, INITIAL_POINTS_STATE} from './points.reducers';
@@ -32,7 +32,7 @@ export interface IAppState {
   axes: IAxesState;
   calculator: ICalculatorState;
   configuration: IConfigurationState;
-  contour: IContourState;
+  pocket: IPocketState;
   holes: IHolesState;
   midpoint: IMidpointState;
   points: IPointsState;
@@ -42,7 +42,7 @@ export const INITIAL_APP_STATE:IAppState = {
   axes: INITIAL_AXES_STATE,
   calculator: INITIAL_CALCULATOR_STATE,
   configuration: INITIAL_CONFIGURATION_STATE,
-  contour: INITIAL_CONTOUR_STATE,
+  pocket: INITIAL_POCKET_STATE,
   holes: INITIAL_HOLES_STATE,
   midpoint: INITIAL_MIDPOINT_STATE,
   points: INITIAL_POINTS_STATE
@@ -56,7 +56,7 @@ export const rootReducer = combineReducers<IAppState>({
   axes: axesReducer,
   calculator: calculatorReducer,
   configuration: configurationReducer,
-  contour: contourReducer,
+  pocket: pocketReducer,
   holes: holesReducer,
   midpoint: midpointReducer,
   points: pointsReducer

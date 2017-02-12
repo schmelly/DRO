@@ -24,7 +24,6 @@ import {NgModule} from '@angular/core';
 import {FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {HttpModule} from '@angular/http';
 import {BrowserModule} from '@angular/platform-browser';
-
 import {NgReduxModule} from 'ng2-redux';
 
 import {AppComponent} from './app.component';
@@ -34,8 +33,8 @@ import {CalculatorComponent} from './calculator/calculator.component';
 import {CalculatorViewComponent} from './calculator/calculator.view.component';
 import {ConfigurationComponent} from './configuration/configuration.component';
 import {ConfigurationViewComponent} from './configuration/configuration.view.component';
-import {ContourComponent} from './contour/contour.component';
-import {ContourViewComponent} from './contour/contour.view.component';
+import {PocketComponent} from './pocket/pocket.component';
+import {PocketViewComponent} from './pocket/pocket.view.component';
 import {PointsComponent} from './points/points.component';
 import {PointsViewComponent} from './points/points.view.component';
 import {MidpointComponent} from './midpoint/midpoint.component';
@@ -57,8 +56,8 @@ enableProdMode();
     CalculatorViewComponent,
     ConfigurationComponent,
     ConfigurationViewComponent,
-    ContourComponent,
-    ContourViewComponent,
+    PocketComponent,
+    PocketViewComponent,
     PointsComponent,
     PointsViewComponent,
     MidpointComponent,

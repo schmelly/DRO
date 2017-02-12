@@ -41,5 +41,5 @@ export function midpointReducer(state:IMidpointState = INITIAL_MIDPOINT_STATE, a
             return action.midpoint
     }
 
-    return stateCopy;
+    return state;
 };

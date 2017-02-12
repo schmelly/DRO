@@ -194,14 +194,14 @@ export function calculatorReducer(state:ICalculatorState = INITIAL_CALCULATOR_ST
             return action.calculator;
         case CALCULATOR:
             stateCopy.calculator = action.calculator;
-        break;
+            return stateCopy;
         case DIRECTION:
             calc.direction = action.direction;
-        break;
+            return stateCopy;
         case DISPLAY_STRING:
             calc.displayString = action.displayString;
-        break;
+            return stateCopy;
     }
 
-    return stateCopy;
+    return state;
 };

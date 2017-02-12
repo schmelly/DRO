@@ -41,5 +41,5 @@ export function holesReducer(state:IHolesState = INITIAL_HOLES_STATE, action): I
             return action.holes
     }
 
-    return stateCopy;
+    return state;
 };

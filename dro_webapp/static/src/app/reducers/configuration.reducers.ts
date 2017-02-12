@@ -50,16 +50,15 @@ export function configurationReducer(state:IConfigurationState = INITIAL_CONFIGU
         switch(action.axis) {
             case 'yAxis':
             stateCopy.configuration.invertY = action.inverted;
-            break;
+            return stateCopy;
             case 'zAxis':
             stateCopy.configuration.invertZ = action.inverted;
-            break;
+            return stateCopy;
             default:
             stateCopy.configuration.invertX = action.inverted;
-            break;
+            return stateCopy;
         }
-        break;
     }
 
-    return stateCopy;
+    return state;
 };

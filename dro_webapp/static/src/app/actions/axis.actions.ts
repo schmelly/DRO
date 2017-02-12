@@ -62,8 +62,9 @@ export class AxisActions {
     switch(calc.direction) {
       case 'left':
         if('abs'===axis.reference) {
-          var newInc = -(Number(displayString)-axis.absValue);
-          this.ngRedux.dispatch({type: SET_AXIS, axis: axis, incValue: newInc});
+          /*var newInc = -(Number(displayString)-axis.absValue);
+          this.ngRedux.dispatch({type: SET_AXIS, axis: axis, incValue: newInc});*/
+          this.socketService.setAbsPostion(axis.label, Number(displayString));
         } else {
           // bei inc:
           // => inc neu berechnen (neuer inc Nullpunkt: Zielkoordinate bezogen auf aktuell inc!)

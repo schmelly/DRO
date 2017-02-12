@@ -18,7 +18,7 @@
     <https://github.com/schmelly/DRO/tree/master/dro_webapp> or 
     <http://www.gnu.org/licenses/>.
 */
-import {Component, OnInit} from '@angular/core';
+import {Component, ElementRef, OnInit} from '@angular/core';
 import {Router} from '@angular/router'
 import {applyMiddleware, compose, createStore, Middleware, Store} from 'redux';
 import thunk from 'redux-thunk';
@@ -28,6 +28,7 @@ import {IAppState, INITIAL_APP_STATE, rootReducer} from './reducers/app.reducers
 import {SocketActions} from './actions/socket.actions';
 import {SocketService} from './shared/socket.service';
 
+const screenfull = require('screenfull');
 const svg4everybody = require('svg4everybody');
 const createLogger = require('redux-logger');
 
@@ -67,5 +68,9 @@ export class AppComponent implements OnInit {
 
   loadConfiguration() {
     this.socketService.loadConfiguration();
+  }
+
+  fullscreenMode() {
+    screenfull.toggle();
   }
 }

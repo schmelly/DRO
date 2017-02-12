@@ -23,37 +23,53 @@ import {NgRedux, select} from 'ng2-redux';
 import {Observable} from 'rxjs';
 
 import {IAppState} from '../reducers/app.reducers';
-import {IContour} from '../reducers/contour.reducers';
+import {IPocket} from '../reducers/pocket.reducers';
 import {IPoint} from '../reducers/points.reducers';
-import {ContourActions} from '../actions/contour.actions';
+import {IAxis} from '../axis/axis.component';
+import {PocketActions} from '../actions/pocket.actions';
+import {INITIAL_POCKET_STATE} from '../reducers/pocket.reducers';
 
 @Component({
-  selector: 'contour',
-  providers: [ContourActions],
+  selector: 'pocket',
+  providers: [PocketActions],
   template: `
-  <contourView
-    [contour]="contour$ | async"
+  <pocketView
+    [pocket]="pocket$ | async"
     [points]="points$ | async"
     [xAxis]="xAxis$ | async"
     [yAxis]="yAxis$ | async"
     [zAxis]="zAxis$ | async"
+    (p1Select)="p1Select($event);"
+    (p2Select)="p2Select($event);"
+    (radioSelect)="radioSelect($event);">
   >
-  </contourView>
+  </pocketView>
   `
 })
-export class ContourComponent {
+export class PocketComponent {
 
-  @select(['contour', 'contour']) contour$: Observable<IContour>;
+  @select(['pocket', 'pocket']) pocket$: Observable<IPocket>;
   @select(['points', 'points']) points$: Observable<Array<IPoint>>;
-  @select(['axes', 'xAxis']) xAxis$: Observable<IContour>;
-  @select(['axes', 'yAxis']) yAxis$: Observable<IContour>;
-  @select(['axes', 'zAxis']) zAxis$: Observable<IContour>;
+  @select(['axes', 'xAxis']) xAxis$: Observable<IAxis>;
+  @select(['axes', 'yAxis']) yAxis$: Observable<IAxis>;
+  @select(['axes', 'zAxis']) zAxis$: Observable<IAxis>;
   
   constructor(
     private ngRedux: NgRedux<IAppState>, 
-    private contourActions: ContourActions
+    private pocketActions: PocketActions
   ) {}
 
-  invertAxisSelectionClick(event): void {
+  p1Select(event): void {
+    var idx = event.target.selectedIndex;
+    this.pocketActions.p1Select(idx);
+  }
+
+  p2Select(event): void {
+    var idx = event.target.selectedIndex;
+    this.pocketActions.p2Select(idx);
+  }
+
+  radioSelect(event): void {
+    this.pocketActions.radioSelect(event);
   }
 }

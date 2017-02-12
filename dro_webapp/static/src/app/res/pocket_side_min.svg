@@ -1,0 +1,9 @@
+<svg xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" viewBox="0 0 30 100">
+ <g id="pocket">
+  <text id="dist_z" style="letter-spacing:0px;font-size:7.5px;word-spacing:0px;font-family:sans-serif;line-height:125%" xml:space="preserve" transform="rotate(90)" class="svg_text" y="-24.106201" x="4.6159668"><tspan x="4.6159668" style="font-size:7.5px" y="-24.106201">0</tspan></text>
+  <path id="drill" style="stroke-linecap:round;stroke-width:1px;fill:none" d="m10 29.493h10m-10 0c0 5 1 6 1 6m2-6s-2 5-2 15m9 5c0-5-1-6-1-6m-2 6s2-5 2-15m1-5c0 10-10 10-10 20h10"/>
+  <path class="svg_path" style="stroke-width:1px;fill:none" d="m25 50v25m-20-25v25m-5-20 5-5m20 0h5m-30 0h5m25 5-5 5m5 5-5 5m-20-10-5 5m5 5-5.1768 5.1768"/>
+  <path id="pocket_border_bottom_z" class="svg_path" style="stroke-width:1px;fill:none" d="m5 75h20m0 25 5-5m0-10-5 5l-10 10m-4.823-25.177-10.354 10.354m30.177-10.177-25 25m15-25-20 20"/>
+  <path style="stroke-width:.5;fill:none" d="m23 75v-70m0 70-1 3h2z" class="svg_path"/>
+ </g>
+</svg>
