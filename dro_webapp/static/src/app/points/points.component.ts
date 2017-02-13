@@ -34,7 +34,8 @@ import {PointsActions} from '../actions/points.actions';
   `<pointsView
     [points]="points$ | async"
     (loadPointsClick)="loadPointsClick($event);"
-    (deletePointsClick)="deletePointsClick($event);">
+    (deletePointsClick)="deletePointsClick($event);"
+    (pointSelectedClick)="pointSelectedClick($event);">
   </pointsView>
   `
 })
@@ -55,5 +56,9 @@ export class PointsComponent {
 
   deletePointsClick(event): void {
     this.pointsActions.deletePointsClick();
+  }
+
+  pointSelectedClick(point): void {
+    this.pointsActions.pointSelectedClick(point);
   }
 }

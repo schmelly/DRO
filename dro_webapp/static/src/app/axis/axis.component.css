@@ -20,17 +20,17 @@
 */
 .container {
     display: grid;
-    grid-template-columns: 30% 15% 15% 15% 15%;
+    grid-template-columns: 18% 18% 18% 18% 18%;
     grid-template-rows: 45% 45%;
     grid-gap: 1vh;
-    align-content: space-evenly;
+    align-content: space-around;
     align-items: center;
     justify-items: end;
 }
 
 .digit {
     font-family: digit;
-    font-size: 15vh;
+    font-size: 14.5vh;
     text-align: right;
     grid-column: 1 / span 5;
     grid-row: 1 / span 1;

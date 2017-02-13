@@ -25,7 +25,7 @@ import {Observable} from 'rxjs';
 import {IAppState} from '../reducers/app.reducers';
 import {IPocket} from '../reducers/pocket.reducers';
 import {IPoint} from '../reducers/points.reducers';
-import {IAxis} from '../axis/axis.component';
+import {IAxis} from '../reducers/axis.reducers';
 import {PocketActions} from '../actions/pocket.actions';
 import {INITIAL_POCKET_STATE} from '../reducers/pocket.reducers';
 
@@ -60,13 +60,12 @@ export class PocketComponent {
   ) {}
 
   p1Select(event): void {
-    var idx = event.target.selectedIndex;
-    this.pocketActions.p1Select(idx);
+    console.log(event);
+    this.pocketActions.p1Select(event);
   }
 
   p2Select(event): void {
-    var idx = event.target.selectedIndex;
-    this.pocketActions.p2Select(idx);
+    this.pocketActions.p2Select(event);
   }
 
   radioSelect(event): void {

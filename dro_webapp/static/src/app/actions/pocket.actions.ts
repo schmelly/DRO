@@ -35,12 +35,13 @@ export class PocketActions {
   
   constructor(private ngRedux: NgRedux<IAppState>) {}
 
-  p1Select(idx) {
-    this.ngRedux.dispatch({type: SET_POINTS, p1: this.ngRedux.getState().points.points[idx], p2: this.ngRedux.getState().pocket.pocket.p2});
+  p1Select(point) {
+    console.log(point);
+    this.ngRedux.dispatch({type: SET_POINTS, p1: point, p2: this.ngRedux.getState().pocket.pocket.p2});
   }
 
-  p2Select(idx) {
-    this.ngRedux.dispatch({type: SET_POINTS, p1: this.ngRedux.getState().pocket.pocket.p1, p2: this.ngRedux.getState().points.points[idx]});
+  p2Select(point) {
+    this.ngRedux.dispatch({type: SET_POINTS, p1: this.ngRedux.getState().pocket.pocket.p1, p2: point});
   }
 
   radioSelect(value) {

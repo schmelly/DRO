@@ -13,14 +13,10 @@
 }
 
 .listitem {
-    display: flex;
+    display: grid;
+    grid-template-columns: 15% 28% 28% 28%;
     align-items: center;
-    flex-direction: row;
-    font-size: 5vh;
-}
-
-.listitem div {
-    flex-grow: 1;
+    font-size: 4vh;
 }
 
 .inputfile {

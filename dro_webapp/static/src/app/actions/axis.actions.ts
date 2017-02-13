@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {NgRedux} from 'ng2-redux';
 
-import {IAxis} from "../axis/axis.component";
+import {IAxis} from '../reducers/axis.reducers';
 import {IAppState} from "../reducers/app.reducers";
 import {ICalculator} from '../reducers/calculator.reducers';
 import {SocketService} from '../shared/socket.service';
@@ -36,6 +36,8 @@ export class AxisActions {
     var reference:string;
       if(axis.reference==='abs') {
       reference = 'inc';
+    } else if(axis.reference==='inc' && axis.pointName!==undefined){
+      reference = axis.pointName;
     } else {
       reference = 'abs';
     }
@@ -46,11 +48,9 @@ export class AxisActions {
   setZero(axis:IAxis) {
 
     if(axis.reference==='abs') {
-      var newInc = axis.incValue - axis.absValue;
-      this.ngRedux.dispatch({type: SET_ZERO, axis: axis, abs: true, incValue: newInc});
       this.socketService.setZero(axis.label);
     }
-    else {
+    else if(axis.reference==='abs') {
       this.ngRedux.dispatch({type: SET_ZERO, axis: axis, inc: true});
     }
   }
@@ -62,21 +62,16 @@ export class AxisActions {
     switch(calc.direction) {
       case 'left':
         if('abs'===axis.reference) {
-          /*var newInc = -(Number(displayString)-axis.absValue);
-          this.ngRedux.dispatch({type: SET_AXIS, axis: axis, incValue: newInc});*/
           this.socketService.setAbsPostion(axis.label, Number(displayString));
-        } else {
-          // bei inc:
-          // => inc neu berechnen (neuer inc Nullpunkt: Zielkoordinate bezogen auf aktuell inc!)
-          var newInc = -(Number(displayString)-axis.incValue);
-          this.ngRedux.dispatch({type: SET_AXIS, axis: axis, incValue: newInc});
+        } else if('inc'===axis.reference) {
+          this.ngRedux.dispatch({type: SET_AXIS, axis: axis, incOffset: Number(displayString)-axis.absValue});
         }
       break;
       case 'right':
         if('abs'===axis.reference) {
           displayString = NUMBER_FORMAT.format(axis.absValue);
-        } else {
-          displayString = NUMBER_FORMAT.format(axis.incValue);
+        } else if('inc'===axis.reference) {
+          displayString = NUMBER_FORMAT.format(axis.absValue+axis.incOffset);
         }
         this.ngRedux.dispatch({type: DISPLAY_STRING, displayString: displayString});
     }

@@ -28,6 +28,7 @@ import * as selectors from './selectors';
 export const REINITIALIZE_POINTS = 'REINITIALIZE_POINTS';
 export const LOAD_POINTS = 'LOAD_POINTS';
 export const DELETE_POINTS = 'DELETE_POINTS';
+export const POINT_SELECTED = 'POINT_SELECTED';
 
 @Injectable()
 export class PointsActions {
@@ -57,5 +58,9 @@ export class PointsActions {
 
   emitPoints(points:Array<IPoint>) {
     this.ngRedux.dispatch({type: LOAD_POINTS, points: points});
+  }
+
+  pointSelectedClick(point:IPoint) {
+    this.ngRedux.dispatch({type: POINT_SELECTED, point: point});
   }
 }

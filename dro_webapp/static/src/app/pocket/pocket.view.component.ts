@@ -22,7 +22,7 @@ import {Component, EventEmitter, Input, Output, ViewChild, ElementRef} from '@an
 
 import {IPocket} from '../reducers/pocket.reducers';
 import {IPoint} from '../reducers/points.reducers';
-import {IAxis} from '../axis/axis.component';
+import {IAxis} from '../reducers/axis.reducers';
 
 @Component({
   selector: 'pocketView',
@@ -196,5 +196,13 @@ export class PocketViewComponent {
       case false:
         return "finishing";
     }
+  }
+
+  getP1() {
+    return this.pocket.p1;
+  }
+
+  getP2() {
+    return this.pocket.p2;
   }
 }

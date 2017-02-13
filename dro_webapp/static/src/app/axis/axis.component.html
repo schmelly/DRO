@@ -33,7 +33,7 @@
         <svg viewBox="0 0 20 20"><use xlink:href="app/res/svg-defs.svg#button_split"></use></svg>
         <div class="label_container">
             <div class="{{getReferenceStyle('abs')}}">abs</div>
-            <div class="{{getReferenceStyle('inc')}}">inc</div>
+            <div class="{{getReferenceStyle('inc')}}">{{getReferenceLabel()}}</div>
         </div>
     </div>
     <div class="button zero" (click)="zeroSelection.emit({axis: axis})"><svg viewBox="0 0 20 20"><use xlink:href="app/res/svg-defs.svg#button_empty"></use></svg><span class="label">zero</span></div>

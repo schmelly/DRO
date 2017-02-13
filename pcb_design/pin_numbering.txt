@@ -1,0 +1,10 @@
++5V red     1
+GND black   2
+CSn white   3
+CLK yellow  4
+DO  green   5
+A   pink    6
+B   purple  7
+IDX blue    8
+PWM grey    9
+NC  brown   10

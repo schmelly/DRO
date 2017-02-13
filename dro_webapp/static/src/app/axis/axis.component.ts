@@ -21,15 +21,7 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 
-export interface IAxis {
-  name: string;
-  label: string;
-  absValue: number;
-  incValue: number;
-  unit: string;
-  reference: string;
-  magIndicator: number;
-}
+import {IAxis} from '../reducers/axis.reducers';
 
 @Component({
   selector: 'axis',
@@ -64,7 +56,10 @@ export class AxisComponent {
   getReferenceStyle(referenceLabel:string) {
     if(referenceLabel===this.axis.reference) {
       return 'selected';
-    } else {
+    } else if(referenceLabel==='inc' && this.axis.reference===this.axis.pointName) {
+      return 'selected';
+    }
+    else {
       return '';
     }
   }
@@ -85,8 +80,18 @@ export class AxisComponent {
   getAxisValue() {
     if(this.axis.reference==='abs') {
       return this.axis.absValue;
+    } else if(this.axis.reference==='inc') {
+      return this.axis.absValue + this.axis.incOffset;
     } else {
-      return this.axis.incValue;
+      return this.axis.absValue - this.axis.pointValue;
+    }
+  }
+
+  getReferenceLabel() {
+    if(this.axis.reference==='inc' || this.axis.reference==='abs' || this.axis.pointName===undefined) {
+      return 'inc';
+    } else {
+      return this.axis.pointName;
     }
   }
 }

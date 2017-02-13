@@ -32,10 +32,24 @@ export class PointsViewComponent {
   @Input() points:Array<IPoint>;
   @Output() loadPointsClick: EventEmitter<any> = new EventEmitter();
   @Output() deletePointsClick: EventEmitter<any> = new EventEmitter();
+  @Output() pointSelectedClick: EventEmitter<any> = new EventEmitter();
 
   @ViewChild('fileInput') fileInput;
 
+  numberFormat = new Intl.NumberFormat(
+    'en', 
+    {
+      style: 'decimal',
+      maximumFractionDigits: 2,
+      minimumFractionDigits: 2
+    }
+  );
+
   inputClick() {
     this.fileInput.nativeElement.value = null;
+  }
+
+  formatValue(value) {
+    return this.numberFormat.format(value);
   }
 }

@@ -21,7 +21,21 @@
 
 import * as axes_actions from '../actions/axis.actions';
 import * as socket_actions from '../actions/socket.actions';
-import {IAxis} from '../axis/axis.component';
+import * as points_actions from '../actions/points.actions';
+
+import {IPoint} from './points.reducers';
+
+export interface IAxis {
+  name: string;
+  label: string;
+  absValue: number;
+  incOffset: number;
+  unit: string;
+  reference: string;
+  pointName: string;
+  pointValue: number;
+  magIndicator: number;
+}
 
 export interface IAxesState {
   xAxis: IAxis;
@@ -33,9 +47,11 @@ const defaultAxis:IAxis = {
     name: '',
     label: '',
     absValue: 0,
-    incValue: 0,
+    incOffset: 0,
     unit: 'mm',
     reference: 'abs',
+    pointName: undefined,
+    pointValue: undefined,
     magIndicator: 0
 };
 
@@ -60,36 +76,55 @@ function setReference(state:IAxesState, axis:IAxis, reference:string): IAxesStat
   return state;
 }
 
-function setZero(state:IAxesState, axis:IAxis, abs: boolean, inc: boolean, incValue: number): IAxesState {
-  if(abs!==undefined && abs===true) {
+function setZero(state:IAxesState, axis:IAxis, inc: boolean): IAxesState {
+  /*if(abs!==undefined && abs===true) {
     state[axis.name].incValue = incValue;
     state[axis.name]['reference'] = 'inc';
-  }
+  }*/
   if(inc!==undefined && inc===true) {
-    state[axis.name].incValue = 0;
+    state[axis.name].incOffset = -state[axis.name].absValue;
   }
   return state;
 }
 
 function setAxis(state:IAxesState, axis:IAxis, value: number): IAxesState {
-  state[axis.name]['incValue'] = value;
-  state[axis.name]['reference'] = 'inc';
+  state[axis.name].incOffset = value;
   return state;
 }
 
 function setAbsPosition(state:IAxesState, absPosition): IAxesState {
-  var offsetX = absPosition.data.X - state.xAxis.absValue;
-  var offsetY = absPosition.data.Y - state.yAxis.absValue;
-  var offsetZ = absPosition.data.Z - state.zAxis.absValue;
   state.xAxis.absValue = absPosition.data.X;
   state.yAxis.absValue = absPosition.data.Y;
   state.zAxis.absValue = absPosition.data.Z;
-  state.xAxis.incValue = state.xAxis.incValue + offsetX;
-  state.yAxis.incValue = state.yAxis.incValue + offsetY;
-  state.zAxis.incValue = state.zAxis.incValue + offsetZ;
   state.xAxis.magIndicator = absPosition.data.magX;
   state.yAxis.magIndicator = absPosition.data.magY;
   state.zAxis.magIndicator = absPosition.data.magZ;
+  return state;
+}
+
+function pointSelected(state:IAxesState, point:IPoint): IAxesState {
+  state.xAxis.pointName = point.name;
+  state.yAxis.pointName = point.name;
+  state.zAxis.pointName = point.name;
+  state.xAxis.pointValue = point.x;
+  state.yAxis.pointValue = point.y;
+  state.zAxis.pointValue = point.z;
+  state.xAxis.reference = point.name;
+  state.yAxis.reference = point.name;
+  state.zAxis.reference = point.name;
+  return state;
+}
+
+function deletePoints(state:IAxesState): IAxesState {
+  state.xAxis.pointName = undefined;
+  state.yAxis.pointName = undefined;
+  state.zAxis.pointName = undefined;
+  state.xAxis.pointValue = undefined;
+  state.yAxis.pointValue = undefined;
+  state.zAxis.pointValue = undefined;
+  state.xAxis.reference = 'abs';
+  state.yAxis.reference = 'abs';
+  state.zAxis.reference = 'abs';
   return state;
 }
 
@@ -100,9 +135,11 @@ export function axesReducer(state:IAxesState = INITIAL_AXES_STATE, action): IAxe
     case axes_actions.REINITIALIZE_AXES: return action.axes;
     case axes_actions.CHANGE_UNIT: return setUnit(stateCopy, action.axis, action.unit);
     case axes_actions.CHANGE_REFERENCE: return setReference(stateCopy, action.axis, action.reference);
-    case axes_actions.SET_ZERO: return setZero(stateCopy, action.axis, action.abs, action.inc, action.incValue);
-    case axes_actions.SET_AXIS: return setAxis(stateCopy, action.axis, action.incValue);
+    case axes_actions.SET_ZERO: return setZero(stateCopy, action.axis, action.inc);
+    case axes_actions.SET_AXIS: return setAxis(stateCopy, action.axis, action.incOffset);
     case socket_actions.ABS_POS: return setAbsPosition(stateCopy, action.absPosition);
+    case points_actions.POINT_SELECTED: return pointSelected(stateCopy, action.point);
+    case points_actions.DELETE_POINTS: return deletePoints(stateCopy);
   }
   return state;
 };

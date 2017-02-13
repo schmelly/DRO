@@ -24,10 +24,11 @@
     <div class="button" (click)="deletePointsClick.emit($event);"><svg viewBox="0 0 20 20"><use xlink:href="app/res/svg-defs.svg#button_del_points"></use></svg></div>
     <div class="list">
         <div class="listitem" *ngFor="let point of points">
-            <div>{{point.name}}</div>
-            <div>{{"x: "}}{{point.x}}</div>
-            <div>{{"y: "}}{{point.y}}</div>
-            <div>{{"z: "}}{{point.z}}</div>
+            <div class="button" (click)="pointSelectedClick.emit(point)"><svg viewBox="0 0 20 20"><use xlink:href="app/res/svg-defs.svg#button_empty"></use></svg><div class="label">{{point.name}}</div></div>
+            <!--div>{{point.name}}</div-->
+            <div>{{"x: "}}{{formatValue(point.x)}}</div>
+            <div>{{"y: "}}{{formatValue(point.y)}}</div>
+            <div>{{"z: "}}{{formatValue(point.z)}}</div>
         </div>
     </div>
 </div>

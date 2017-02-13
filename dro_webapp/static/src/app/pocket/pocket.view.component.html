@@ -27,12 +27,12 @@
         </ng2-dropdown-menu>
     </ng2-dropdown-->
 
-    <select class="point_selection" (change)="p1Select.emit($event)">
-        <option *ngFor="let point of points">{{getPointOption(point)}}</option>
+    <select class="point_selection" (ngModelChange)="p1Select.emit($event)" [ngModel]="getP1()">
+        <option *ngFor="let point of points" [ngValue]="point">{{getPointOption(point)}}</option>
     </select>
 
-    <select class="point_selection" (change)="p2Select.emit($event)">
-        <option *ngFor="let point of points">{{getPointOption(point)}}</option>
+    <select class="point_selection" (ngModelChange)="p2Select.emit($event)" [ngModel]="getP2()">
+        <option *ngFor="let point of points" [ngValue]="point">{{getPointOption(point)}}</option>
     </select>
 
     <fieldset class="finish_selection">

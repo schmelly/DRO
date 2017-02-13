@@ -25,7 +25,7 @@ import {Observable} from 'rxjs';
 
 import {AxisActions} from '../actions/axis.actions';
 import {IAppState} from '../reducers/app.reducers';
-import {IAxis} from '../axis/axis.component';
+import {IAxis} from '../reducers/axis.reducers';
 
 @Component({
   selector: 'display',

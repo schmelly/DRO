@@ -84,7 +84,8 @@ svg {
 }
 
 .background {
-    color: #272932;
+    /*color: #272932;*/
+    color: #413E42;
 }
 
 .selected {
