@@ -32,15 +32,18 @@ import {REINITIALIZE_CONFIGURATION} from "../actions/configuration.actions";
 export class SocketService {
     private name: string;
     private host: string = window.location.protocol + "//" + window.location.hostname + ":" + window.location.port;
-    socket: SocketIOClient.Socket;
+    private socket: SocketIOClient.Socket;
+    private connected: boolean = false;
+    private socketActions: SocketActions;
 
     constructor(private ngRedux: NgRedux<IAppState>) {}
 
     get(actions: SocketActions) {
         let socketUrl = this.host;
+        this.socketActions = actions;
         this.socket = io.connect(socketUrl, {transports: ['websocket']});
-        this.socket.on("connect", () => this.connect());
-        this.socket.on("disconnect", () => this.disconnect());
+        this.socket.on("connect", () => this.connected=true);
+        this.socket.on("disconnect", () => this.connected=false);
         this.socket.on("error", (error: string) => {
             console.log(`ERROR: "${error}" (${socketUrl})`);
         });
@@ -56,18 +59,25 @@ export class SocketService {
         return this;
     }
 
-    private connect() {
-    }
-
-    private disconnect() {
-    }
-
     setZero(axisLabel:string) {
         this.socket.emit('setZero', {axis: axisLabel});
     }
 
     setAbsPostion(axisLabel:string, absPos:number) {
-        this.socket.emit('setAbsPosition', {axis: axisLabel, absPos: absPos});
+        if(this.connected) {
+            this.socket.emit('setAbsPosition', {axis: axisLabel, absPos: absPos});
+        } else {
+            var curAbsPos = {
+                data:{
+                    'X': this.ngRedux.getState().axes.xAxis.absValue, 
+                    'Y': this.ngRedux.getState().axes.yAxis.absValue, 
+                    'Z': this.ngRedux.getState().axes.zAxis.absValue, 
+                    'magX': 0, 
+                    'magY': 0, 
+                    'magZ': 0}};
+            curAbsPos.data[axisLabel] = absPos;
+            this.socketActions.absPosition(curAbsPos);
+        }
     }
 
     saveConfiguration(appState:IAppState) {

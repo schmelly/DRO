@@ -20,7 +20,7 @@
 #    <http://www.gnu.org/licenses/>.
 
 from flask import Flask, request, send_from_directory
-from flask_socketio import SocketIO
+from flask_socketio import SocketIO, emit
 import os
 import RPi.GPIO as GPIO
 import sys
@@ -114,6 +114,12 @@ def read_raw_pos():
   LIN_y = 0
   pos_y = 0
   
+  word_z = 0
+  MagINC_z = 0
+  MagDEC_z = 0
+  LIN_z = 0
+  pos_z = 0
+  
   for i in range(0, 18):
     GPIO.output(PIN_CLK, GPIO.LOW)
     GPIO.output(PIN_CLK, GPIO.HIGH)
@@ -142,8 +148,9 @@ def read_raw_pos():
   
   mag_x = (MagINC_x << 2) | (MagDEC_x << 1) | LIN_x
   mag_y = (MagINC_y << 2) | (MagDEC_y << 1) | LIN_y
+  mag_z = (MagINC_z << 2) | (MagDEC_z << 1) | LIN_z
   
-  return {'X':pos_x, 'xMag':mag_x,'Y':pos_y, 'yMag':mag_y}
+  return {'X':pos_x, 'xMag':mag_x, 'Y':pos_y, 'yMag':mag_y, 'Z':pos_z, 'zMag':mag_z}
 
 # def read_mag(axis):
   
@@ -198,10 +205,17 @@ def read_abs_pos():
     increments['Y'] = increments['Y'] + 1.0
   absPosition['Y'] = newRawPos['Y']*2.0/4096.0 + 2.0*increments['Y']
   
+  if (newRawPos['Z'] >= 2048 and rawPos['Z'] < 2048 and abs(newRawPos['Z']-rawPos['Z'])>=2048):
+    increments['Z'] = increments['Z'] - 1.0
+  elif (newRawPos['Z'] < 2048 and rawPos['Z'] >= 2048 and abs(newRawPos['Z']-rawPos['Z'])>=2048):
+    increments['Z'] = increments['Z'] + 1.0
+  absPosition['Z'] = newRawPos['Z']*2.0/4096.0 + 2.0*increments['Z']
+  
   rawPos['X'] = newRawPos['X']
   rawPos['Y'] = newRawPos['Y']
+  rawPos['Z'] = newRawPos['Z']
   
-  return {'X':absPosition['X'], 'xMag':newRawPos['xMag'],'Y':absPosition['Y'], 'yMag':newRawPos['yMag']}
+  return {'X':absPosition['X'], 'xMag':newRawPos['xMag'], 'Y':absPosition['Y'], 'yMag':newRawPos['yMag'], 'Z':absPosition['Z'], 'zMag':newRawPos['zMag']}
 
 def updateAbsPos():
 
@@ -216,8 +230,8 @@ def updateAbsPos():
   magX = absPosition['xMag']
   posY = absPosition['Y']
   magY = absPosition['yMag']
-  posZ = 0.0
-  magZ = 0
+  posZ = absPosition['Z']
+  magZ = absPosition['zMag']
   
   filterPosValues.pop(0)
   filterPosValues.append({'X':posX,'Y':posY,'Z':posZ})
@@ -276,6 +290,24 @@ def handleSetZero(json):
   axis = json['axis']
   absZero[axis] = absPos[axis]
 
+@socketio.on('setAbsPosition')
+def handleSetAbsPosition(json):
+  global absPos
+  global absZero
+  global increments
+  
+  axis = json['axis']
+  newAbsPos = json['absPos']
+  curAbsAxis = absPos[axis]
+  curIncAxis = increments[axis]
+  _, curOffset = divmod(curAbsAxis,2)
+  newIncrements, newOffset = divmod(newAbsPos,2)
+  newZero = -(newOffset - curOffset)
+  absZero[axis] = newZero
+  increments[axis] = newIncrements
+  
+  print('curAbsAxis: {} curIncAxis: {} curOffset: {} newIncrements: {} newOffset: {} newZero: {}'.format(curAbsAxis, curIncAxis, curOffset, newIncrements, newOffset, newZero))
+
 @socketio.on('setPosition')
 def handleSetPosition(json):
   global absPos
@@ -284,13 +316,81 @@ def handleSetPosition(json):
   position = json['pos']
   absZero[axis] = absPos[axis]
 
+@socketio.on('saveConfiguration')
+def handleSaveConfiguration(json):
+  global rawPos
+  global absPos
+  global absZero
+  global increments
+  
+  config = {
+    'rawPos':rawPos,
+    'absPos':absPos,
+    'absZero':absZero,
+    'increments':increments,
+    'clientConfig':json}
+  
+  with open('dro_server.conf', 'w') as f:
+    f.write(str(config))
+
+@socketio.on('loadConfiguration')
+def handleLoadConfiguration():
+  global rawPos
+  global absPos
+  global absZero
+  global increments
+  
+  with open('dro_server.conf', 'r') as f:
+    config = f.read()
+    config = eval(config)
+    rawPos = config['rawPos']
+    absPos = config['absPos']
+    absZero = config['absZero']
+    increments = config['increments']
+    emit('loadConfiguration', config['clientConfig'])
+
 @app.route('/')
 def indexHtml():
-    return app.send_static_file('index.html')
+  return app.send_static_file('index.html')
 
 @app.route('/<path:filename>')
 def staticPath(filename):
-    return app.send_static_file(filename)
+  return app.send_static_file(filename)
+
+def is_float(s):
+  try:
+    s = float(s)
+    return True
+  except:
+    return False
+
+@app.route('/debugSetAbs')
+def debugSetAbs():
+  try:
+    global absZero
+    global increments
+    absX = request.args.get('x','')
+    absY = request.args.get('y','')
+    absZ = request.args.get('z','')
+    incX = request.args.get('incX','')
+    incY = request.args.get('incY','')
+    incZ = request.args.get('incZ','')
+    print(is_float(absX))
+    if is_float(absX):
+      absZero['X']=-float(absX)
+    if is_float(absY):
+      absZero['Y']=-float(absY)
+    if is_float(absZ):
+      absZero['Z']=-float(absZ)
+    if is_float(incX):
+      increments['X']=-float(incX)
+    if is_float(incY):
+      increments['Y']=-float(incY)
+    if is_float(incZ):
+      increments['Z']=-float(incZ)
+  except Exception as e:
+    print(e);
+  return 'ok';
 
 def main():
   
@@ -307,15 +407,18 @@ def main():
   rawPosition = read_raw_pos()
   rawPos['X'] = rawPosition['X']
   rawPos['Y'] = rawPosition['Y']
+  rawPos['Z'] = rawPosition['Z']
   
   magX = rawPosition['xMag']
   magY = rawPosition['yMag']
+  magZ = rawPosition['zMag']
   
   absPosition = read_abs_pos()
   absPos['X'] = absPosition['X']
   absPos['Y'] = absPosition['Y']
+  absPos['Z'] = absPosition['Z']
   
-  filterPosValues = [{'X':absPos['X'],'Y':absPos['Y'],'Z':0.0}]*filterPosSize
+  filterPosValues = [{'X':absPos['X'],'Y':absPos['Y'],'Z':absPos['Z']}]*filterPosSize
   
   sensorReadingThread.start()
   socketio.run(app, HOST, PORT)
