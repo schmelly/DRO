@@ -20,13 +20,6 @@
 -->
 <div class="container">
 
-    <!--ng2-dropdown>
-        <ng2-dropdown-button [showCaret]="false" class="dropdown-button">First Point</ng2-dropdown-button>
-        <ng2-dropdown-menu width="2"> 
-            <ng2-menu-item *ngFor="let point of points">{{getPointOption(point)}}</ng2-menu-item>
-        </ng2-dropdown-menu>
-    </ng2-dropdown-->
-
     <select class="point_selection" (ngModelChange)="p1Select.emit($event)" [ngModel]="getP1()">
         <option *ngFor="let point of points" [ngValue]="point">{{getPointOption(point)}}</option>
     </select>

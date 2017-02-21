@@ -32,9 +32,6 @@ export const INITIAL_HOLES_STATE:IHolesState = {
 };
 
 export function holesReducer(state:IHolesState = INITIAL_HOLES_STATE, action): IHolesState {
-    
-    var stateCopy:IHolesState = Object.assign({}, state);
-    var calc:IHoles = stateCopy.holes;
 
     switch(action.type) {
         case REINITIALIZE_HOLES:

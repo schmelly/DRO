@@ -18,10 +18,10 @@
     <https://github.com/schmelly/DRO/tree/master/dro_webapp> or 
     <http://www.gnu.org/licenses/>.
 */
-import {REINITIALIZE_POCKET, SET_POCKET_POINTS, SET_POCKET_FINISHING_MODE} from '../actions/pocket.actions';
+import {REINITIALIZE_CONTOUR, SET_CONTOUR_POINTS, SET_CONTOUR_FINISHING_MODE} from '../actions/contour.actions';
 import {IPoint} from './points.reducers';
 
-export interface IPocket {
+export interface IContour {
     p1: IPoint;
     p2: IPoint;
     millRadius: number;
@@ -29,12 +29,12 @@ export interface IPocket {
     roughing: boolean;
 }
 
-export interface IPocketState {
-    pocket: IPocket;
+export interface IContourState {
+    contour: IContour;
 };
 
-export const INITIAL_POCKET_STATE:IPocketState = {
-  pocket: {
+export const INITIAL_CONTOUR_STATE:IContourState = {
+  contour: {
       p1: {name: 'p1', x:0, y:0, z:0},
       p2: {name: 'p2', x:0, y:0, z:0},
       millRadius: 2.0,
@@ -43,21 +43,19 @@ export const INITIAL_POCKET_STATE:IPocketState = {
   }
 };
 
-export function pocketReducer(state:IPocketState = INITIAL_POCKET_STATE, action): IPocketState {
-    
-    
+export function contourReducer(state:IContourState = INITIAL_CONTOUR_STATE, action): IContourState {
 
     switch(action.type) {
-        case REINITIALIZE_POCKET:
-            return action.pocket;
-        case SET_POCKET_POINTS:
-            var stateCopy:IPocketState = Object.assign({}, state);
-            stateCopy.pocket.p1 = action.p1;
-            stateCopy.pocket.p2 = action.p2;
+        case REINITIALIZE_CONTOUR:
+            return action.contour;
+        case SET_CONTOUR_POINTS:
+            var stateCopy:IContourState = Object.assign({}, state);
+            stateCopy.contour.p1 = action.p1;
+            stateCopy.contour.p2 = action.p2;
             return stateCopy;
-        case SET_POCKET_FINISHING_MODE:
-            var stateCopy:IPocketState = Object.assign({}, state);
-            stateCopy.pocket.roughing = action.roughing;
+        case SET_CONTOUR_FINISHING_MODE:
+            var stateCopy:IContourState = Object.assign({}, state);
+            stateCopy.contour.roughing = action.roughing;
             return stateCopy;
     }
 

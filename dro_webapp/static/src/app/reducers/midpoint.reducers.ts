@@ -32,9 +32,6 @@ export const INITIAL_MIDPOINT_STATE:IMidpointState = {
 };
 
 export function midpointReducer(state:IMidpointState = INITIAL_MIDPOINT_STATE, action): IMidpointState {
-    
-    var stateCopy:IMidpointState = Object.assign({}, state);
-    var calc:IMidpoint = stateCopy.midpoint;
 
     switch(action.type) {
         case REINITIALIZE_MIDPOINT:

@@ -39,9 +39,6 @@ export const INITIAL_CONFIGURATION_STATE:IConfigurationState = {
 };
 
 export function configurationReducer(state:IConfigurationState = INITIAL_CONFIGURATION_STATE, action): IConfigurationState {
-    
-    var stateCopy:IConfigurationState = Object.assign({}, state);
-    var calc:IConfiguration = stateCopy.configuration;
 
     switch(action.type) {
         case REINITIALIZE_CONFIGURATION:
@@ -49,12 +46,15 @@ export function configurationReducer(state:IConfigurationState = INITIAL_CONFIGU
         case INVERT:
         switch(action.axis) {
             case 'yAxis':
+            var stateCopy:IConfigurationState = Object.assign({}, state);
             stateCopy.configuration.invertY = action.inverted;
             return stateCopy;
             case 'zAxis':
+            var stateCopy:IConfigurationState = Object.assign({}, state);
             stateCopy.configuration.invertZ = action.inverted;
             return stateCopy;
             default:
+            var stateCopy:IConfigurationState = Object.assign({}, state);
             stateCopy.configuration.invertX = action.inverted;
             return stateCopy;
         }

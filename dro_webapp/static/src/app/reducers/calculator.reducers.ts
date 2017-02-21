@@ -185,20 +185,22 @@ function handleDir(calc:ICalculator) {
 }
 
 export function calculatorReducer(state:ICalculatorState = INITIAL_CALCULATOR_STATE, action): ICalculatorState {
-    
-    var stateCopy:ICalculatorState = Object.assign({}, state);
-    var calc:ICalculator = stateCopy.calculator;
 
     switch(action.type) {
         case REINITIALIZE_CALCULATOR:
             return action.calculator;
         case CALCULATOR:
+            var stateCopy:ICalculatorState = Object.assign({}, state);
             stateCopy.calculator = action.calculator;
             return stateCopy;
         case DIRECTION:
+            var stateCopy:ICalculatorState = Object.assign({}, state);
+            var calc:ICalculator = stateCopy.calculator;
             calc.direction = action.direction;
             return stateCopy;
         case DISPLAY_STRING:
+            var stateCopy:ICalculatorState = Object.assign({}, state);
+            var calc:ICalculator = stateCopy.calculator;
             calc.displayString = action.displayString;
             return stateCopy;
     }

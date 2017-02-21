@@ -130,16 +130,29 @@ function deletePoints(state:IAxesState): IAxesState {
 
 export function axesReducer(state:IAxesState = INITIAL_AXES_STATE, action): IAxesState {
 
-  var stateCopy = {...state};
   switch(action.type) {
     case axes_actions.REINITIALIZE_AXES: return action.axes;
-    case axes_actions.CHANGE_UNIT: return setUnit(stateCopy, action.axis, action.unit);
-    case axes_actions.CHANGE_REFERENCE: return setReference(stateCopy, action.axis, action.reference);
-    case axes_actions.SET_ZERO: return setZero(stateCopy, action.axis, action.inc);
-    case axes_actions.SET_AXIS: return setAxis(stateCopy, action.axis, action.incOffset);
-    case socket_actions.ABS_POS: return setAbsPosition(stateCopy, action.absPosition);
-    case points_actions.POINT_SELECTED: return pointSelected(stateCopy, action.point);
-    case points_actions.DELETE_POINTS: return deletePoints(stateCopy);
+    case axes_actions.CHANGE_UNIT: 
+      var stateCopy = {...state};
+      return setUnit(stateCopy, action.axis, action.unit);
+    case axes_actions.CHANGE_REFERENCE: 
+      var stateCopy = {...state};
+      return setReference(stateCopy, action.axis, action.reference);
+    case axes_actions.SET_ZERO: 
+      var stateCopy = {...state};
+      return setZero(stateCopy, action.axis, action.inc);
+    case axes_actions.SET_AXIS: 
+      var stateCopy = {...state};
+      return setAxis(stateCopy, action.axis, action.incOffset);
+    case socket_actions.ABS_POS: 
+      var stateCopy = {...state};
+      return setAbsPosition(stateCopy, action.absPosition);
+    case points_actions.POINT_SELECTED: 
+      var stateCopy = {...state};
+      return pointSelected(stateCopy, action.point);
+    case points_actions.DELETE_POINTS: 
+      var stateCopy = {...state};
+      return deletePoints(stateCopy);
   }
   return state;
 };

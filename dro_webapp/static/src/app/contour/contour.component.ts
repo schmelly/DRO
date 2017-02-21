@@ -23,18 +23,18 @@ import {NgRedux, select} from 'ng2-redux';
 import {Observable} from 'rxjs';
 
 import {IAppState} from '../reducers/app.reducers';
-import {IPocket} from '../reducers/pocket.reducers';
+import {IContour} from '../reducers/contour.reducers';
 import {IPoint} from '../reducers/points.reducers';
 import {IAxis} from '../reducers/axis.reducers';
-import {PocketActions} from '../actions/pocket.actions';
-import {INITIAL_POCKET_STATE} from '../reducers/pocket.reducers';
+import {ContourActions} from '../actions/contour.actions';
+import {INITIAL_CONTOUR_STATE} from '../reducers/contour.reducers';
 
 @Component({
-  selector: 'pocket',
-  providers: [PocketActions],
+  selector: 'contour',
+  providers: [ContourActions],
   template: `
-  <pocketView
-    [pocket]="pocket$ | async"
+  <contourView
+    [contour]="contour$ | async"
     [points]="points$ | async"
     [xAxis]="xAxis$ | async"
     [yAxis]="yAxis$ | async"
@@ -43,12 +43,12 @@ import {INITIAL_POCKET_STATE} from '../reducers/pocket.reducers';
     (p2Select)="p2Select($event);"
     (radioSelect)="radioSelect($event);">
   >
-  </pocketView>
+  </contourView>
   `
 })
-export class PocketComponent {
+export class ContourComponent {
 
-  @select(['pocket', 'pocket']) pocket$: Observable<IPocket>;
+  @select(['contour', 'contour']) contour$: Observable<IContour>;
   @select(['points', 'points']) points$: Observable<Array<IPoint>>;
   @select(['axes', 'xAxis']) xAxis$: Observable<IAxis>;
   @select(['axes', 'yAxis']) yAxis$: Observable<IAxis>;
@@ -56,18 +56,18 @@ export class PocketComponent {
   
   constructor(
     private ngRedux: NgRedux<IAppState>, 
-    private pocketActions: PocketActions
+    private contourActions: ContourActions
   ) {}
 
   p1Select(event): void {
-    this.pocketActions.p1Select(event);
+    this.contourActions.p1Select(event);
   }
 
   p2Select(event): void {
-    this.pocketActions.p2Select(event);
+    this.contourActions.p2Select(event);
   }
 
   radioSelect(event): void {
-    this.pocketActions.radioSelect(event);
+    this.contourActions.radioSelect(event);
   }
 }

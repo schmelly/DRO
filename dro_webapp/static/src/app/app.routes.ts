@@ -21,6 +21,7 @@
 import { Routes, RouterModule } from '@angular/router';
 import {CalculatorComponent} from "./calculator/calculator.component";
 import {ConfigurationComponent} from "./configuration/configuration.component";
+import {ContourComponent} from "./contour/contour.component";
 import {PocketComponent} from "./pocket/pocket.component";
 import {PointsComponent} from "./points/points.component";
 import {MidpointComponent} from "./midpoint/midpoint.component";
@@ -39,6 +40,10 @@ export const ROUTE_CONFIG: Routes = [
     {
         path: 'configuration',
         component: ConfigurationComponent
+    },
+    {
+        path: 'contour',
+        component: ContourComponent
     },
     {
         path: 'pocket',

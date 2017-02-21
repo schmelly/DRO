@@ -37,15 +37,15 @@ export const INITIAL_POINTS_STATE:IPointsState = {
 
 export function pointsReducer(state:IPointsState = INITIAL_POINTS_STATE, action): IPointsState {
     
-    var stateCopy:IPointsState = Object.assign({}, state);
-
     switch(action.type) {
         case REINITIALIZE_POINTS:
             return action.points;
         case LOAD_POINTS:
+            var stateCopy:IPointsState = Object.assign({}, state);
             stateCopy.points = stateCopy.points.concat(action.points);
             return stateCopy;
         case DELETE_POINTS:
+            var stateCopy:IPointsState = Object.assign({}, state);
             stateCopy.points = [];
             return stateCopy;
     }

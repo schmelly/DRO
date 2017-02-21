@@ -31,6 +31,8 @@ import {AppRoutesModule} from "./app.routes";
 import {AxisComponent} from './axis/axis.component';
 import {CalculatorComponent} from './calculator/calculator.component';
 import {CalculatorViewComponent} from './calculator/calculator.view.component';
+import {ContourComponent} from './contour/contour.component';
+import {ContourViewComponent} from './contour/contour.view.component';
 import {ConfigurationComponent} from './configuration/configuration.component';
 import {ConfigurationViewComponent} from './configuration/configuration.view.component';
 import {PocketComponent} from './pocket/pocket.component';
@@ -54,6 +56,8 @@ enableProdMode();
     DisplayComponent,
     CalculatorComponent,
     CalculatorViewComponent,
+    ContourComponent,
+    ContourViewComponent,
     ConfigurationComponent,
     ConfigurationViewComponent,
     PocketComponent,
