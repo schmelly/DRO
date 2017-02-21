@@ -13,11 +13,9 @@ var webpackConfig = {
     path: path.resolve(__dirname, './dist'),
   },
 
-  debug: false,
-
   plugins: [
-    new webpack.optimize.OccurenceOrderPlugin(),
-    new webpack.optimize.DedupePlugin(),
+    //new webpack.optimize.OccurenceOrderPlugin(),
+    //new webpack.optimize.DedupePlugin(),
     //new webpack.optimize.CommonsChunkPlugin('vendors', 'vendors-[hash].js', Infinity),
 
     new webpack.optimize.UglifyJsPlugin({
@@ -54,6 +52,7 @@ var webpackConfig = {
       },
       { test: /\.css$/, loaders: ['to-string-loader', 'css-loader'] },
       { test: /\.html$/, loader: 'raw-loader' },
+      { test: /\.txt$/, loader: 'file-loader' },
       { test: /\.(ttf|TTF)$/, loader: 'file-loader' },
       { test: /\.(svg)$/, loader: 'file-loader' }
     ]
@@ -72,7 +71,7 @@ var defaultConfig = {
   },
 
   resolve: {
-    extensions: [ '', '.ts', '.js' ],
+    extensions: [ '.ts', '.js' ],
     modules: [ path.resolve(__dirname, 'node_modules') ]
   },
 
