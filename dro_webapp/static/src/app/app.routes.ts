@@ -22,10 +22,11 @@ import { Routes, RouterModule } from '@angular/router';
 import {CalculatorComponent} from "./calculator/calculator.component";
 import {ConfigurationComponent} from "./configuration/configuration.component";
 import {ContourComponent} from "./contour/contour.component";
+import {HolesComponent} from "./holes/holes.component";
 import {PocketComponent} from "./pocket/pocket.component";
 import {PointsComponent} from "./points/points.component";
 import {MidpointComponent} from "./midpoint/midpoint.component";
-import {HolesComponent} from "./holes/holes.component";
+import {ShutdownComponent} from "./shutdown/shutdown.component";
 
 export const ROUTE_CONFIG: Routes = [
     {
@@ -46,6 +47,10 @@ export const ROUTE_CONFIG: Routes = [
         component: ContourComponent
     },
     {
+        path: 'holes',
+        component: HolesComponent
+    },
+    {
         path: 'pocket',
         component: PocketComponent
     },
@@ -58,8 +63,8 @@ export const ROUTE_CONFIG: Routes = [
         component: MidpointComponent
     },
     {
-        path: 'holes',
-        component: HolesComponent
+        path: 'shutdown',
+        component: ShutdownComponent
     },
     {
         path: '**',

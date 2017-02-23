@@ -62,6 +62,7 @@ PIN_CSN = 11
 PIN_CLK = 12
 PIN_DO_X = 15
 PIN_DO_Y = 16
+PIN_DO_Z = 18
 
 rawPos = {'X':0,'Y':0,'Z':0}
 increments = {'X':0,'Y':0,'Z':0}
@@ -93,6 +94,7 @@ def setup_gpio():
   GPIO.setup(PIN_CLK, GPIO.OUT)
   GPIO.setup(PIN_DO_X, GPIO.IN)
   GPIO.setup(PIN_DO_Y, GPIO.IN)
+  GPIO.setup(PIN_DO_Z, GPIO.IN)
 
   GPIO.output(PIN_CSN, GPIO.HIGH)
   GPIO.output(PIN_CLK, GPIO.HIGH)
@@ -130,18 +132,25 @@ def read_raw_pos():
     bit_y = GPIO.input(PIN_DO_Y)
     word_y = (word_y << 1) | bit_y
     
+    bit_z = GPIO.input(PIN_DO_Z)
+    word_z = (word_z << 1) | bit_z
+    
     if i == 14:
       LIN_x = bit_x
       LIN_y = bit_y
+      LIN_z = bit_z
     if i == 15:
       MagINC_x = bit_x
       MagINC_y = bit_y
+      MagINC_z = bit_z
     if i == 14:
       MagDEC_x = bit_x
       MagDEC_y = bit_y
+      MagDEC_z = bit_z
     if i == 11:
       pos_x = word_x
       pos_y = word_y
+      pos_z = word_z
   
   #disable serial transfer
   GPIO.output(PIN_CSN, GPIO.HIGH)
@@ -224,6 +233,7 @@ def updateAbsPos():
   global filterPosSize
   global magX
   global magY
+  global magZ
   
   absPosition = read_abs_pos()
   posX = absPosition['X']
@@ -348,6 +358,22 @@ def handleLoadConfiguration():
     absZero = config['absZero']
     increments = config['increments']
     emit('loadConfiguration', config['clientConfig'])
+
+@socketio.on('shutdown')
+def handleShutdown():
+  command = "/usr/bin/sudo /sbin/shutdown -h now"
+  import subprocess
+  process = subprocess.Popen(command.split(), stdout=subprocess.PIPE)
+  output = process.communicate()[0]
+  print(output)
+
+@socketio.on('reboot')
+def handleReboot():
+  command = "/usr/bin/sudo /sbin/shutdown -r now"
+  import subprocess
+  process = subprocess.Popen(command.split(), stdout=subprocess.PIPE)
+  output = process.communicate()[0]
+  print (output)
 
 @app.route('/')
 def indexHtml():

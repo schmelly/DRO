@@ -35,15 +35,17 @@ import {ContourComponent} from './contour/contour.component';
 import {ContourViewComponent} from './contour/contour.view.component';
 import {ConfigurationComponent} from './configuration/configuration.component';
 import {ConfigurationViewComponent} from './configuration/configuration.view.component';
+import {DisplayComponent} from './display/display.component';
+import {HolesComponent} from './holes/holes.component';
+import {HolesViewComponent} from './holes/holes.view.component';
 import {PocketComponent} from './pocket/pocket.component';
 import {PocketViewComponent} from './pocket/pocket.view.component';
 import {PointsComponent} from './points/points.component';
 import {PointsViewComponent} from './points/points.view.component';
 import {MidpointComponent} from './midpoint/midpoint.component';
 import {MidpointViewComponent} from './midpoint/midpoint.view.component';
-import {HolesComponent} from './holes/holes.component';
-import {HolesViewComponent} from './holes/holes.view.component';
-import {DisplayComponent} from './display/display.component';
+import {ShutdownComponent} from './shutdown/shutdown.component';
+import {ShutdownViewComponent} from './shutdown/shutdown.view.component';
 
 import {SharedModule} from './shared/shared.module';
 
@@ -67,7 +69,9 @@ enableProdMode();
     MidpointComponent,
     MidpointViewComponent,
     HolesComponent,
-    HolesViewComponent
+    HolesViewComponent,
+    ShutdownComponent,
+    ShutdownViewComponent
   ],
   imports: [
     BrowserModule,

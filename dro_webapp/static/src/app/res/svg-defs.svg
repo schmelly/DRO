@@ -101,5 +101,9 @@
   <rect style="color-rendering:auto;color:#000000;shape-rendering:auto;solid-color:#000000;mix-blend-mode:normal;image-rendering:auto;isolation:auto" class="button_border" rx="1.9" height="19" width="19" y=".5" x=".5"/>
   <path class="button_path" style="stroke-width:1px" d="m12 16h4v-4m-12 0v4h4m4-12h4v4m-8-4h-4v4"/>
  </g>
+ <g id="button_shutdown">
+  <rect style="color-rendering:auto;color:#000000;shape-rendering:auto;solid-color:#000000;mix-blend-mode:normal;image-rendering:auto;isolation:auto" class="button_border" rx="1.9" height="19" width="19" y=".5" x=".5"/>
+  <path style="stroke-width:1px" d="m10 6v3m-1-1.8262c-1.1979 0.4235-1.999 1.5557-2 2.8262 0 1.6569 1.3431 3 3 3s3-1.3431 3-3c-0.002-1.2698-0.803-2.401-2-2.8242m5 2.8242c0 3.3137-2.6863 6-6 6s-6-2.6863-6-6 2.6863-6 6-6 6 2.6863 6 6z" class="button_path"/>
+ </g>
 </defs>
 </svg>

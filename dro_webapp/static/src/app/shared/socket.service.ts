@@ -81,10 +81,26 @@ export class SocketService {
     }
 
     saveConfiguration(appState:IAppState) {
-        this.socket.emit('saveConfiguration', appState);
+        if(this.connected) {
+            this.socket.emit('saveConfiguration', appState);
+        }
     }
 
     loadConfiguration() {
-        this.socket.emit('loadConfiguration');
+        if(this.connected) {
+            this.socket.emit('loadConfiguration');
+        }
+    }
+
+    shutdown() {
+        if(this.connected) {
+            this.socket.emit('shutdown');
+        }
+    }
+
+    reboot() {
+        if(this.connected) {
+            this.socket.emit('reboot');
+        }
     }
 }
