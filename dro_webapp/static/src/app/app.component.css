@@ -20,7 +20,7 @@
 */
 .container {
     display: grid;
-    grid-template-columns: 35% 50% 15%;
+    grid-template-columns: 37% 46% 17%;
     grid-template-rows: 100%;
 }
 
@@ -40,7 +40,7 @@ nav {
     grid-column: 3 / span 1;
     grid-template-columns: 45% 45%;
     /*grid-template-rows: 20% 20% 20% 20% 20%;*/
-    justify-content: space-around;
-    align-content: space-around;
+    justify-content: space-evenly;
+    align-content: space-evenly;
     border-left: 2px solid #124559;
 }

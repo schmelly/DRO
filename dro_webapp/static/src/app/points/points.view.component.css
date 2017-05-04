@@ -14,9 +14,9 @@
 
 .listitem {
     display: grid;
-    grid-template-columns: 15% 28% 28% 28%;
+    grid-template-columns: 22% 26% 26% 26%;
     align-items: center;
-    font-size: 4vh;
+    font-size: 3vh;
 }
 
 .inputfile {

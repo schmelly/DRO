@@ -49,16 +49,16 @@ app {
     display: table-cell;
     position: relative;
     font-size: 4vh;
-    width: 10vh;
-    height: 10vh;
+    width: 9vh;
+    height: 9vh;
 }
 
 svg {
     position: absolute;
     left: 0;
     top: 0;
-    width: 10vh;
-    height: 10vh;
+    width: 9vh;
+    height: 9vh;
 }
 
 .label {
@@ -68,9 +68,9 @@ svg {
     position: absolute;
     left: 0;
     top: 0;
-    width: 10vh;
-    height: 10vh;
-    line-height: 10vh;
+    width: 9vh;
+    height: 9vh;
+    line-height: 9vh;
 }
 
 .container {

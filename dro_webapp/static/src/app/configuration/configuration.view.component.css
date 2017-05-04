@@ -57,8 +57,8 @@
 .label_container {
     display: flex;
     flex-direction: column;
-    height: 10vh;
-    width: 10vh;
+    height: 9vh;
+    width: 9vh;
     justify-content: center;
     align-content: center;
 }
