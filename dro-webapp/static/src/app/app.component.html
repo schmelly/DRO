@@ -1,0 +1,42 @@
+<!--
+    DRO WebApp
+
+    Copyright (C) 2017 David Schmelter
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see
+    <https://github.com/schmelly/DRO/tree/master/dro-webapp> or
+    <http://www.gnu.org/licenses/>.
+-->
+<div class="container">
+  <app-display>
+  </app-display>
+
+  <div class="template">
+      <router-outlet></router-outlet>
+  </div>
+
+  <nav class="navbar navbar-default">
+      <div class="button" (click)="loadConfiguration()"><svg viewBox="0 0 20 20"><use xlink:href="assets/svg-defs.svg#button_load"></use></svg></div>
+      <div class="button" (click)="saveConfiguration()"><svg viewBox="0 0 20 20"><use xlink:href="assets/svg-defs.svg#button_save"></use></svg></div>
+      <a [routerLink]="['/calculator']"><div class="button"><svg viewBox="0 0 20 20"><use xlink:href="assets/svg-defs.svg#button_calc"></use></svg></div></a>
+      <a [routerLink]="['/midpoint']"><div class="button"><svg viewBox="0 0 20 20"><use xlink:href="assets/svg-defs.svg#button_midpoint"></use></svg></div></a>
+      <a [routerLink]="['/pocket']"><div class="button"><svg viewBox="0 0 20 20"><use xlink:href="assets/svg-defs.svg#button_pocket"></use></svg></div></a>
+      <a [routerLink]="['/contour']"><div class="button"><svg viewBox="0 0 20 20"><use xlink:href="assets/svg-defs.svg#button_contour"></use></svg></div></a>
+      <a [routerLink]="['/holes']"><div class="button"><svg viewBox="0 0 20 20"><use xlink:href="assets/svg-defs.svg#button_holes"></use></svg></div></a>
+      <a [routerLink]="['/points']"><div class="button"><svg viewBox="0 0 20 20"><use xlink:href="assets/svg-defs.svg#button_points"></use></svg></div></a>
+      <a [routerLink]="['/configuration']"><div class="button"><svg viewBox="0 0 20 20"><use xlink:href="assets/svg-defs.svg#button_config"></use></svg></div></a>
+      <div (click)="fullscreenMode()" class="button" #fullscreen><svg viewBox="0 0 20 20"><use xlink:href="assets/svg-defs.svg#button_fullscreen"></use></svg></div>
+      <a [routerLink]="['/shutdown']"><div class="button"><svg viewBox="0 0 20 20"><use xlink:href="assets/svg-defs.svg#button_shutdown"></use></svg></div></a>
+  </nav>
+</div>

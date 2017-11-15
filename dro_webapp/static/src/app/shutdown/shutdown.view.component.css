@@ -1,9 +1,0 @@
-.container {
-    display: grid;
-    grid-template-columns: 20% 40%;
-    grid-template-rows: 45% 45%;
-    justify-content: space-evenly;
-    align-content: space-evenly;
-    align-items: center;
-    font-size: 3vh;
-}

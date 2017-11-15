@@ -1,0 +1,28 @@
+<!--
+    DRO WebApp
+
+    Copyright (C) 2017 David Schmelter
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see
+    <https://github.com/schmelly/DRO/tree/master/dro-webapp> or
+    <http://www.gnu.org/licenses/>.
+-->
+<div class="container">
+  <div class="axes">
+      <div class="axesLabel">Invert Axes</div>
+      <div class="button selectable xAxis" (click)="invertAxisSelectionClick.emit({axis: 'xAxis'})"><svg viewBox="0 0 20 20"><use xlink:href="assets/svg-defs.svg#button_empty"></use></svg><div class="label_container"><div class="{{getInvertedStyle('xAxis')}}">X</div></div></div>
+      <div class="button selectable yAxis" (click)="invertAxisSelectionClick.emit({axis: 'yAxis'})"><svg viewBox="0 0 20 20"><use xlink:href="assets/svg-defs.svg#button_empty"></use></svg><div class="label_container"><div class="{{getInvertedStyle('yAxis')}}">Y</div></div></div>
+      <div class="button selectable zAxis" (click)="invertAxisSelectionClick.emit({axis: 'zAxis'})"><svg viewBox="0 0 20 20"><use xlink:href="assets/svg-defs.svg#button_empty"></use></svg><div class="label_container"><div class="{{getInvertedStyle('zAxis')}}">Z</div></div></div>
+  </div>
+</div>

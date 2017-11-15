@@ -1,0 +1,68 @@
+/*
+    DRO WebApp
+
+    Copyright (C) 2017 David Schmelter
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see
+    <https://github.com/schmelly/DRO/tree/master/dro-webapp> or
+    <http://www.gnu.org/licenses/>.
+*/
+.container {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    font-size: 3vh;
+}
+
+.axes {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto auto;
+    justify-content: center;
+    grid-row-gap: 5vh;
+    grid-column-gap: 5vh;
+}
+
+.axesLabel {
+    grid-column: 1 / span 3;
+    grid-row: 1 / span 1;
+}
+
+.xAxis {
+    grid-column: 1 / span 1;
+    grid-row: 2 / span 1;
+}
+
+.yAxis {
+    grid-column: 2 / span 1;
+    grid-row: 2 / span 1;
+}
+
+.zAxis {
+    grid-column: 3 / span 1;
+    grid-row: 2 / span 1;
+}
+
+.label_container {
+    display: flex;
+    flex-direction: column;
+    height: 9vh;
+    width: 9vh;
+    justify-content: center;
+    align-content: center;
+}
+
+.label_container div {
+    margin: auto;
+}
