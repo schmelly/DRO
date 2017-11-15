@@ -23,6 +23,7 @@ import { NgRedux } from '@angular-redux/store';
 import io from 'socket.io-client';
 
 import { IAppState } from '../reducers/app.reducers';
+import { IAxis } from '../reducers/axis.reducers';
 import { SocketActions } from '../actions/socket.actions';
 import { REINITIALIZE_AXES } from '../actions/axis.actions';
 import { REINITIALIZE_CALCULATOR } from '../actions/calculator.actions';
@@ -64,6 +65,15 @@ export class SocketService {
     }
 
     setAbsPostion(axisLabel: string, absPos: number) {
+
+        if (axisLabel === this.ngRedux.getState().axes.xAxis.label && this.ngRedux.getState().configuration.configuration.invertX) {
+            absPos = -absPos;
+        } else if (axisLabel === this.ngRedux.getState().axes.yAxis.label && this.ngRedux.getState().configuration.configuration.invertY) {
+            absPos = -absPos;
+        } else if (axisLabel === this.ngRedux.getState().axes.zAxis.label && this.ngRedux.getState().configuration.configuration.invertZ) {
+            absPos = -absPos;
+        }
+
         if (this.connected) {
             this.socket.emit('setAbsPosition', { axis: axisLabel, absPos: absPos });
         } else {
